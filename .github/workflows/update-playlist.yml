@@ -31,6 +31,32 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Build
         run: python scripts/build_playlist.py
+      - name: Install verified Kubo for native IPNS resolution
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/kubo-download"
+          gh release download v0.43.1 --repo ipfs/kubo \
+            --pattern 'kubo_v0.43.1_linux-amd64.tar.gz' \
+            --pattern 'kubo_v0.43.1_linux-amd64.tar.gz.sha512' \
+            --dir "$RUNNER_TEMP/kubo-download"
+          cd "$RUNNER_TEMP/kubo-download"
+          sha512sum --check kubo_v0.43.1_linux-amd64.tar.gz.sha512
+          tar -xzf kubo_v0.43.1_linux-amd64.tar.gz kubo/ipfs
+          echo "$RUNNER_TEMP/kubo-download/kubo" >> "$GITHUB_PATH"
+      - name: Refresh current catalogues and publish authorized sources
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: python scripts/refresh_sources.py
+      - name: Upload refresh report (metadata only)
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-report
+          path: .research/refresh-status.json
+          if-no-files-found: warn
+          include-hidden-files: true
+          retention-days: 14
       - name: Validate
         run: python scripts/validate_playlist.py docs/canales.m3u
       - name: Upload Pages artifact

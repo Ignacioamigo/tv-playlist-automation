@@ -36,7 +36,7 @@ Añadir `mi-dominio.example` a los dominios aprobados para utilizar ese ejemplo.
 
 El parser admite duración numérica, nombre, `tvg-id`, `tvg-name`, `tvg-logo` y `group-title`, con atributos entre comillas dobles. Normaliza espacios, Unicode y duración a `-1`; conserva comas en nombres y atributos. Permite comentarios simples entre metadatos y URL. Rechaza directivas extendidas no soportadas para evitar eliminarlas silenciosamente.
 
-Se admiten identificadores `acestream://` de 40 caracteres hexadecimales y HTTPS con dominio aprobado. Se rechazan HTTP, credenciales, parámetros de consulta, fragmentos, IPs literales, puertos especiales y extensiones de URL del reproductor. Es una política conservadora: una URL legítima con parámetros requiere diseñar una ampliación antes de usarla. El generador nunca conecta con las emisiones ni descarga fuentes remotas.
+Se admiten identificadores `acestream://` de 40 caracteres hexadecimales y HTTPS con dominio aprobado. Se rechazan HTTP, credenciales, parámetros de consulta, fragmentos, IPs literales, puertos especiales y extensiones de URL del reproductor. Es una política conservadora: una URL legítima con parámetros requiere diseñar una ampliación antes de usarla. El generador local no conecta con las emisiones. El actualizador remoto descrito más abajo descarga únicamente los catálogos declarados; no reproduce vídeo.
 
 No hay detección universal de secretos: un token dentro de una ruta o un dato personal en el nombre puede parecer texto normal. Revisa siempre archivos, metadatos y permisos de redistribución antes de publicarlos. Todo el contenido de `docs/` será público.
 
@@ -50,7 +50,7 @@ No hay detección universal de secretos: un token dentro de una ruta o un dato p
 - Un fallo devuelve código 1. En GitHub se detiene el despliegue y continúa disponible la última publicación correcta. El informe de ese intento fallido se consulta en Actions; el `status.json` público seguirá siendo el de la última publicación.
 - Los errores de configuración se abortan antes de procesar fuentes y pueden dejar el informe anterior intacto. No se mantienen backups adicionales; las fuentes se versionan con Git y Pages conserva la publicación mientras no haya otro despliegue correcto.
 
-La ejecución diaria vuelve a generar los archivos declarados. **No descubre nuevos enlaces ni sustituye automáticamente enlaces caducados.** Una futura fuente remota necesita su propio conector autorizado y controles de red; no está implementada en esta versión.
+La ejecución diaria genera las entradas locales y descarga las revisiones actuales de los siete catálogos de `config/remote-sources.json`. Resuelve IPNS en cada ejecución y descubre el bundle vigente de Ace Stream UI. Refleja los cambios de esos catálogos; no comprueba la reproducción de cada emisión. La publicación automática de un catálogo remoto requiere `authorized: true`, tras verificar el permiso de redistribución. Actualmente los siete tienen `authorized: false`: se recopilan para estudio y la publicación de Pages conserva la demo.
 
 ## Publicar en GitHub Pages
 
@@ -104,7 +104,7 @@ Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no
 ## Verificación de entrega
 
 - Implementados: configuración local, parser, validación CLI, generación determinista, deduplicación, control de orígenes, conservación ante fallos, informe, pruebas sintéticas y workflow.
-- Comprobado localmente: 20 pruebas automáticas, generación de dos entradas ficticias y validación del resultado.
+- Comprobado localmente: 28 pruebas automáticas, descarga actual de los siete catálogos, 2.312 candidatos únicos organizados y validados, y publicación protegida por autorización de fuente.
 - Comprobado en GitHub: repositorio público creado, Pages activo, workflows por push y ejecución manual correctos y URL pública válida.
 - Pendientes: observar la primera ejecución programada, aportar emisiones autorizadas reales y probar recarga/reproducción en la TV. La ejecución manual validada está en [Actions](https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39035177657).
 
@@ -114,7 +114,7 @@ Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no
 - [GitHub: programación, zonas horarias y limitaciones](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
 - [GitHub: despliegues personalizados de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-No se ha conectado ni extraído contenido de los directorios de terceros inventariados en el documento original.
+La investigación posterior descargó catálogos públicos de las fuentes documentadas. Las listas sin permiso de publicación verificado permanecen fuera de Pages.
 
 La inspección de todos los enlaces inventariados está documentada en [REVISION_FUENTES.md](REVISION_FUENTES.md), con resultados y limitaciones por fuente.
 
@@ -123,3 +123,15 @@ La inspección de todos los enlaces inventariados está documentada en [REVISION
 El [estudio de todas las fuentes](research/ESTUDIO.md) obtuvo **2.312 identificadores únicos** de recursos públicos HTTP e IPFS descargados. Se generó una lista local en `.research/canales-candidatos.m3u`, con procedencia por entrada y validación de estructura. Son candidatos sin comprobación de reproducción ni derechos; no se incorporan automáticamente a Pages. Los scripts y resultados resumidos están incluidos en el repositorio.
 
 Las listas de candidatos se organizan automáticamente por secciones, siguiendo el ejemplo facilitado: LA LIGA, HYPERMOTION, LIGA DE CAMPEONES, 1RFEF, DAZN y MOVISTAR DEPORTES, más categorías para el resto del catálogo. Cada bloque tiene un separador `# ===== SECCIÓN =====` y sus entradas comparten `group-title` para OTT Navigator. Las reglas y el orden se ajustan en `config/sections.json`; se consideran los nombres alternativos de cada ID y los casos sin coincidencia quedan en OTROS / SIN CLASIFICAR. La agrupación se aplica al regenerar o fusionar candidatos y conserva los 2.312 identificadores.
+
+## Actualización remota diaria
+
+`python3 scripts/refresh_sources.py --ipfs-bin /ruta/a/ipfs` descarga NEW ERA y ELCANO mediante Kubo nativo, descubre la versión actual del catálogo de Ace Stream UI, consulta Overtakefans y descarga la revisión vigente de tres Gists. El binario Kubo debe estar instalado; GitHub Actions lo descarga de la release oficial 0.43.1 y comprueba su SHA-512 antes de ejecutarlo. El nodo utiliza un directorio temporal y se detiene al terminar; no necesita un servidor permanente ni la sesión de tu ordenador.
+
+El actualizador genera `.research/canales-candidatos.m3u`, `.research/extracted.json` y `.research/refresh-status.json`. Mantiene las secciones configuradas y elimina IDs repetidos. En el runner los archivos de candidatos son temporales: **no se suben a Pages, Git ni a los artefactos**. Solo se guarda durante 14 días el informe de recuentos y fallos `refresh-report`, accesible en cada ejecución de Actions.
+
+Las fuentes remotas distinguen `enabled` (descargar para analizar) y `authorized` (permiso para publicar). No se han marcado como autorizados catálogos de terceros por el hecho de ser accesibles. Cuando exista autorización verificada, cambiar ese campo a `true` en la fuente correspondiente y subir el cambio activa su publicación con la misma URL de proveedor. No autorizar el catálogo entero si el permiso solo cubre parte de sus emisiones: en ese caso hay que seleccionar esas entradas por separado antes de publicarlas.
+
+Las descargas HTTPS restringen dominios y redirecciones, bloquean destinos DNS privados, fijan la IP validada para la conexión TLS y limitan tamaño y tiempo. No reintentan respuestas 403/429. Una fuente autorizada fallida impide el despliegue: Pages conserva la publicación anterior. Los fallos de fuentes que solo se analizan se reflejan en el informe sin convertirlas en fuentes publicables.
+
+Para revisar una actualización: abrir Actions → Update authorized TV playlist, comprobar los pasos de descarga y validación y descargar `refresh-report`. La ejecución manual permite probar el proceso sin esperar al horario diario. La primera ejecución programada y la recarga en una TV real siguen pendientes de observación.
