@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh current remote catalogues; publish only explicitly authorized sources."""
+"""Refresh current remote catalogues and publish enabled sources."""
 from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
@@ -135,12 +135,14 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
     ids = set()
     for source in sources:
         if (not re.fullmatch(r'[a-z0-9_-]+', source['id']) or source['id'] in ids
-                or type(source.get('authorized')) is not bool):
+                or type(source.get('publish')) is not bool):
             raise ValueError('invalid source configuration')
         ids.add(source['id'])
     ipfs = ipfs_factory(ipfs_bin)
     ipfs_ready = False
     entries, publishable, reports = [], [], []
+    cache = root / '.research/source-cache'
+    cache.mkdir(parents=True, exist_ok=True)
     try:
         if any(s['type'] == 'ipns_m3u' for s in sources):
             try:
@@ -153,19 +155,32 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
                 if source['type'] == 'ipns_m3u' and not ipfs_ready:
                     raise ValueError('Kubo unavailable')
                 items = collector(source, limit, timeout, ipfs)
-                return source, items, None
+                if not items:
+                    raise ValueError('empty source')
+                parse(render_sections(items)[0])
+                atomic_write(cache / (source['id'] + '.json'), json.dumps(items, ensure_ascii=False) + '\n')
+                return source, items, None, False
             except (OSError, ValueError, KeyError, http.client.HTTPException, subprocess.SubprocessError) as exc:
                 reason = str(exc) if re.fullmatch(r'HTTP \d{3}', str(exc)) else type(exc).__name__
-                return source, [], reason
+                for backup in [cache / (source['id'] + '.json'), root / 'data/source-snapshots' / (source['id'] + '.json')]:
+                    try:
+                        items = json.loads(backup.read_text())
+                        if not items:
+                            continue
+                        parse(render_sections(items)[0])
+                        return source, items, reason, True
+                    except (OSError, ValueError, TypeError, KeyError):
+                        continue
+                return source, [], reason, False
         with ThreadPoolExecutor(max_workers=3) as pool:
             results = list(pool.map(fetch_one, sources))
-        for source, items, error in results:
+        for source, items, error, cached in results:
             entries.extend(items)
-            if source['authorized']:
+            if source['publish']:
                 publishable.extend(items)
             reports.append({'id': source['id'], 'ok': error is None, 'entries': len(items),
-                            'authorized': source['authorized'], 'error': error})
-            print(f"{source['id']}: {'OK' if error is None else 'ERROR'}; {len(items)} entradas")
+                            'publish': source['publish'], 'cached': cached, 'error': error})
+            print(f"{source['id']}: {'OK' if error is None else 'BACKUP' if cached else 'ERROR'}; {len(items)} entradas")
     finally:
         ipfs.close()
     target = root / '.research'
@@ -179,8 +194,9 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
         status['sections'] = counts
         atomic_write(target / 'canales-candidatos.m3u', text)
         atomic_write(target / 'extracted.json', json.dumps(entries, ensure_ascii=False, indent=2) + '\n')
-    failed_authorized = any(r['authorized'] and not r['ok'] for r in reports)
-    if publishable and not failed_authorized:
+    failed_publish = any(r['publish'] and not r['ok'] and not r['cached'] for r in reports)
+    no_fresh_sources = not any(r['ok'] for r in reports)
+    if publishable and not failed_publish and not no_fresh_sources:
         text, counts = render_sections(publishable)
         status['publication_entries'] = len(parse(text))
         status['publication_sections'] = counts
@@ -189,7 +205,7 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
         status['published'] = True
         atomic_write(root / 'docs/status.json', json.dumps(status, indent=2) + '\n')
     atomic_write(target / 'refresh-status.json', json.dumps(status, indent=2) + '\n')
-    if failed_authorized or not entries:
+    if failed_publish or not entries or no_fresh_sources:
         raise ValueError('refresh incomplete; published playlist preserved')
     return status
 
@@ -204,7 +220,7 @@ def main():
     except (OSError, ValueError, KeyError, TypeError):
         print('ERROR: no se publica una lista incompleta o inválida.')
         return 1
-    print(f"Candidatos únicos: {status['candidate_entries']}; publicados desde fuentes autorizadas: {status['publication_entries']}")
+    print(f"Candidatos únicos: {status['candidate_entries']}; publicados: {status['publication_entries']}")
     if not status['complete']:
         print('WARN: recopilación parcial; consultar refresh-report para las fuentes fallidas.')
     if os.environ.get('GITHUB_OUTPUT'):

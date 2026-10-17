@@ -1,139 +1,80 @@
 # TV automatizada · OTT Navigator + Ace Stream
 
-Genera una lista M3U pública y estable desde archivos locales propios o autorizados. Python 3.12 o posterior, sin paquetes externos ni servidores permanentes.
+Lista M3U organizada por secciones, recopilada de siete catálogos públicos. Python 3.12 o posterior y Kubo para resolver las fuentes IPNS. GitHub Actions hace la actualización diaria sin depender de tu ordenador.
 
-**Estado:** proyecto publicado en [GitHub](https://github.com/Ignacioamigo/tv-playlist-automation), con Pages activo y URL M3U comprobada (HTTP 200 y dos entradas válidas). Los dos canales de ejemplo son ficticios: permiten comprobar la importación, pero no reproducen vídeo. Las emisiones autorizadas reales y las pruebas físicas en la TV están pendientes.
+**URL corta para OTT Navigator:** <https://da.gd/Q6oqM>
 
-**URL para OTT Navigator:** <https://ignacioamigo.github.io/tv-playlist-automation/canales.m3u>
+**URL directa:** <https://ignacioamigo.github.io/tv-playlist-automation/canales.m3u>
 
-## Empezar
+La publicación de los catálogos recopilados está activada por petición expresa del usuario. La lista inicial contiene **2.312 identificadores únicos**, sin las dos entradas ficticias del ejemplo. El número puede cambiar al actualizar las fuentes. Validar la estructura no garantiza que una emisión esté activa, que tenga pares ni que todos los identificadores correspondan a canales diferentes.
 
-Desde la carpeta del proyecto:
+## Configurar la TV
+
+1. Abrir OTT Navigator → Ajustes → Proveedor → añadir una playlist M3U por URL. Los textos pueden variar por versión.
+2. Introducir `https://da.gd/Q6oqM` y guardar. Si ya estaba añadido, pulsar **Actualizar** una vez.
+3. Comprobar los grupos: LA LIGA, HYPERMOTION, LIGA DE CAMPEONES, DAZN, MOVISTAR DEPORTES y el resto.
+4. Para reproducir entradas `acestream://`, el motor Ace Stream debe estar instalado y funcionar en la TV. Probar primero una emisión directamente en el motor y después desde OTT Navigator.
+
+La cabecera `#EXTM3U refresh="3"` pide recarga cada tres horas. La FAQ de OTT Navigator lo documenta desde v1.6.6.1; hay que verificar el comportamiento en la versión y TV concretas, especialmente después de suspender el dispositivo.
+
+## Actualización automática
+
+El workflow [Update authorized TV playlist](https://github.com/Ignacioamigo/tv-playlist-automation/actions) se ejecuta cada día a las **07:17 Europe/Madrid**, al subir cambios a `main` y mediante **Run workflow**. Las pull requests ejecutan pruebas y validación sin descargar ni desplegar catálogos.
+
+1. Comprueba la lista guardada y ejecuta los tests.
+2. Descarga Kubo 0.43.1 de su release oficial y comprueba el SHA-512.
+3. Restaura las últimas copias válidas de las fuentes.
+4. Resuelve los nombres IPNS actuales de NEW ERA y ELCANO. Descubre el bundle vigente de Ace Stream UI, consulta Overtakefans y descarga la revisión actual de tres Gists.
+5. Normaliza las representaciones de los IDs, elimina duplicados y organiza por secciones.
+6. Valida y publica `docs/canales.m3u` mediante GitHub Pages, conservando la misma URL.
+
+GitHub puede retrasar ejecuciones y desactiva la programación de repositorios públicos tras 60 días sin actividad. Revisar Actions periódicamente.
+
+## Fuentes y copias de respaldo
+
+`config/remote-sources.json` distingue `enabled` (recopilar) y `publish` (incluir en la publicación por decisión del usuario). Las siete fuentes están habilitadas para ambas operaciones. Este campo expresa una decisión de publicación, no una certificación de derechos de terceros. No incluir credenciales, URLs privadas ni emisiones cuya publicación no esté permitida.
+
+Cada descarga válida se guarda en `.research/source-cache/`. GitHub Actions conserva esa carpeta mediante caché entre ejecuciones; si la caché no existe, se usan las copias iniciales de `data/source-snapshots/`. Si una fuente falla y existe una copia válida, se mantienen sus enlaces sin bloquear las actualizaciones del resto. El informe marca esa fuente con `cached: true` y conserva el error de descarga.
+
+Si una fuente publicable falla sin respaldo válido, o fallan todas las descargas, se cancela la publicación y Pages mantiene el último despliegue correcto. No se sustituye la lista con una demo ni con una lista vacía. Un respaldo puede contener identificadores antiguos: mantiene disponibilidad de la lista, no garantiza reproducción.
+
+Los errores 403/429 no se sortean ni se reintentan. Overtakefans falló desde los runners en las primeras pruebas, aunque funcionó desde el equipo; su respaldo evita perder los enlaces ya recopilados.
+
+## Secciones
+
+`config/sections.json` configura las reglas y el orden. Cada bloque tiene un separador `# ===== SECCIÓN =====` y sus entradas comparten `group-title` para OTT Navigator. Se consideran los nombres alternativos de un mismo ID; los casos sin coincidencia quedan en OTROS / SIN CLASIFICAR. Se conservan las variantes con ID diferente.
+
+## Ejecutar localmente
 
 ```bash
 python3 -m unittest discover -s tests -v
-python3 scripts/build_playlist.py
+python3 scripts/refresh_sources.py --ipfs-bin /ruta/a/ipfs
 python3 scripts/validate_playlist.py docs/canales.m3u
 python3 -m http.server 8000 --directory docs
 ```
 
-Abrir <http://localhost:8000/canales.m3u>. Detener el servidor con Ctrl+C. Desde la TV hay que usar la IP local del ordenador, por ejemplo `http://192.168.1.20:8000/canales.m3u`, con ambos dispositivos en la misma red y el cortafuegos permitiendo la conexión.
+Abrir <http://localhost:8000/canales.m3u>. Desde la TV se necesita la IP local del ordenador, con ambos dispositivos en la misma red. Detener el servidor con Ctrl+C. No hace falta mantenerlo funcionando para utilizar la URL pública.
 
-## Añadir tus canales
+El actualizador utiliza un repositorio IPFS temporal, con API y gateway en loopback y sin listeners Swarm; detiene el nodo al terminar. Las descargas HTTPS restringen dominios, redirecciones y destinos DNS, verifican TLS y limitan tamaño y tiempo. Nunca se reproduce vídeo ni se ejecuta código obtenido de las fuentes.
 
-1. Sustituir los ejemplos de `examples/canales-demo.m3u` por enlaces que tengas permiso para publicar.
-2. Declarar los dominios HTTPS exactos (también de logos) en `allowed_stream_hosts` de `config/sources.json`. No se admiten comodines. Los enlaces Ace Stream no necesitan dominio.
-3. Para añadir otro archivo, crear otra fuente `local_m3u`, con `id` único, ruta dentro del proyecto, `enabled: true` y `authorized: true`.
-4. Ejecutar generador y validador; revisar el M3U antes de subirlo a GitHub.
+Los scripts originales `build_playlist.py` y `config/sources.json` conservan el ejemplo local del MVP para pruebas. **No son el proceso de actualización de producción**: el workflow utiliza `refresh_sources.py` y no ejecuta el generador de la demo.
 
-```m3u
-#EXTM3U
-#EXTINF:-1 tvg-id="mi-canal" group-title="TV",Mi canal
-https://mi-dominio.example/emision.m3u8
-```
+## Informes y diagnóstico
 
-Añadir `mi-dominio.example` a los dominios aprobados para utilizar ese ejemplo. La configuración inicial solo permite `example.org`.
+- `docs/status.json`: generación publicada, recuentos, grupos, hash y fuentes que utilizaron respaldo.
+- Artefacto `refresh-report` de cada ejecución: informe de ese intento, incluso si falla; retención de 14 días.
+- `.research/refresh-status.json`: informe local.
+- [Estudio de las fuentes](research/ESTUDIO.md): resultados de la investigación inicial; sus recuentos son históricos.
+- [REGISTRO_TV.md](REGISTRO_TV.md): pruebas pendientes de reproducción, refresco y suspensión en la TV real.
 
-El parser admite duración numérica, nombre, `tvg-id`, `tvg-name`, `tvg-logo` y `group-title`, con atributos entre comillas dobles. Normaliza espacios, Unicode y duración a `-1`; conserva comas en nombres y atributos. Permite comentarios simples entre metadatos y URL. Rechaza directivas extendidas no soportadas para evitar eliminarlas silenciosamente.
+Ante cortes, comparar sesiones de 15 minutos en YouTube, Ace Stream y OTT Navigator, y repetir con Ethernet si es posible. Una lista actualizada no corrige una emisión sin pares ni un problema de Wi-Fi.
 
-Se admiten identificadores `acestream://` de 40 caracteres hexadecimales y HTTPS con dominio aprobado. Se rechazan HTTP, credenciales, parámetros de consulta, fragmentos, IPs literales, puertos especiales y extensiones de URL del reproductor. Es una política conservadora: una URL legítima con parámetros requiere diseñar una ampliación antes de usarla. El generador local no conecta con las emisiones. El actualizador remoto descrito más abajo descarga únicamente los catálogos declarados; no reproduce vídeo.
+## Publicación y referencias
 
-No hay detección universal de secretos: un token dentro de una ruta o un dato personal en el nombre puede parecer texto normal. Revisa siempre archivos, metadatos y permisos de redistribución antes de publicarlos. Todo el contenido de `docs/` será público.
+El repositorio usa **Settings → Pages → Source → GitHub Actions**. El workflow tiene lectura del repositorio para construir y permisos `pages: write` e `id-token: write` solo para desplegar. No necesita tokens personales ni un servidor propio.
 
-## Qué ocurre al generar
+El enlace corto es una redirección externa: si falla, usar la URL directa. El acceso público a una fuente no demuestra por sí solo permiso de redistribución. No se han verificado los derechos de terceros ni la reproducción individual de las emisiones.
 
-- Cabecera exacta `#EXTM3U refresh="3"` con la configuración inicial; `refresh_hours` acepta enteros entre 1 y 23.
-- Orden estable por grupo, nombre y URL. Se eliminan entradas completamente idénticas tras normalizar. Se conservan variantes con URL o metadatos diferentes.
-- Todas las fuentes activas deben estar autorizadas, caber en el límite de tamaño y ser válidas por completo. Una fuente con errores impide sustituir la lista, incluso si otras funcionan.
-- Escritura mediante archivo temporal y reemplazo atómico. Si el contenido no cambia, no se reescribe el M3U.
-- `docs/status.json` registra el intento, recuentos y hash, sin copiar URLs ni errores originales. Su fecha cambia en cada ejecución; el M3U sigue siendo determinista.
-- Un fallo devuelve código 1. En GitHub se detiene el despliegue y continúa disponible la última publicación correcta. El informe de ese intento fallido se consulta en Actions; el `status.json` público seguirá siendo el de la última publicación.
-- Los errores de configuración se abortan antes de procesar fuentes y pueden dejar el informe anterior intacto. No se mantienen backups adicionales; las fuentes se versionan con Git y Pages conserva la publicación mientras no haya otro despliegue correcto.
-
-La ejecución diaria genera las entradas locales y descarga las revisiones actuales de los siete catálogos de `config/remote-sources.json`. Resuelve IPNS en cada ejecución y descubre el bundle vigente de Ace Stream UI. Refleja los cambios de esos catálogos; no comprueba la reproducción de cada emisión. La publicación automática de un catálogo remoto requiere `authorized: true`, tras verificar el permiso de redistribución. Actualmente los siete tienen `authorized: false`: se recopilan para estudio y la publicación de Pages conserva la demo.
-
-## Publicar en GitHub Pages
-
-El workflow usa el despliegue oficial mediante Actions, por lo que en Pages hay que seleccionar **GitHub Actions**. Es una adaptación respecto al ejemplo de publicación desde rama del documento de partida; evita commits automáticos y permisos de escritura sobre el código.
-
-1. Crear en tu cuenta un repositorio vacío llamado `tv-playlist-automation`. Revisa la visibilidad: los archivos publicados por Pages se deben considerar públicos.
-2. Subir el proyecto a la rama `main`. Si todavía no tienes Git inicializado:
-
-   ```bash
-   git init -b main
-   git add .
-   git commit -m "Implement authorized TV playlist automation"
-   git remote add origin https://github.com/TU_USUARIO/tv-playlist-automation.git
-   git push -u origin main
-   ```
-
-3. En GitHub, abrir **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-4. Abrir **Actions → Update authorized TV playlist → Run workflow**, elegir `main` y ejecutar. El workflow también comprueba pull requests y ejecuta generación y despliegue tras cada push a `main`.
-5. Revisar que los trabajos `build` y `deploy` terminan correctamente. El entorno `github-pages` mostrará la dirección publicada.
-6. Abrir la URL fija y comprobar la primera línea:
-
-   ```text
-   https://TU_USUARIO.github.io/tv-playlist-automation/canales.m3u
-   ```
-
-El repositorio puede llamarse de otra manera: sustituye también el nombre en la URL. Una vista de archivo de `github.com` no sirve como URL del proveedor.
-
-La ejecución está programada cada día a las **07:17 Europe/Madrid**, con cambios de horario gestionados por GitHub. GitHub puede retrasar u omitir ejecuciones bajo carga y desactiva programaciones en repositorios públicos tras 60 días sin actividad. Revisar Actions periódicamente; esta limitación impide prometer mantenimiento literalmente nulo.
-
-El workflow tiene permisos de lectura para construir y solo `pages: write` e `id-token: write` para desplegar. No necesita tokens personales ni secretos de fuentes. Las actions usan etiquetas de versión; para endurecer la cadena de suministro se pueden fijar a SHA verificados y mantenerlos actualizados.
-
-Si hay un 404, comprobar nombre del repositorio, rama `main`, configuración de Pages y ejecución del despliegue. Si falla el despliegue por permisos, revisar la política del repositorio/organización y las aprobaciones del entorno `github-pages`.
-
-## Configurar la televisión
-
-1. En OTT Navigator, abrir Ajustes → Proveedor y añadir una playlist M3U por URL. Los nombres exactos dependen de la versión instalada.
-2. Introducir la URL HTTPS de Pages, guardar y actualizar manualmente la primera vez.
-3. Comprobar que aparecen las entradas. Los ejemplos incluidos no reproducen contenido real.
-4. Sustituir una entrada autorizada, subir el cambio y esperar un despliegue correcto; comprobar después la recarga del mismo proveedor.
-5. La FAQ documenta `refresh="3"` desde v1.6.6.1 como recarga cada tres horas. Verificarlo en el uso real: Android puede suspender la aplicación y retrasar la actualización hasta volver a abrirla.
-6. Probar una emisión Ace Stream autorizada primero directamente en el motor y después desde OTT Navigator. La asociación de `acestream://` depende de las versiones y del dispositivo; queda pendiente de validación física.
-
-GitHub solo publica texto: el motor Ace Stream debe ejecutarse en la TV. `localhost` del ordenador o de GitHub Actions no es la TV.
-
-## Diagnosticar cortes
-
-Comparar sesiones de 15 minutos: YouTube a 1080p, emisión autorizada directamente en Ace Stream y la misma emisión en OTT Navigator. Si es posible, repetir mediante Ethernet. Cambiar un solo ajuste cada vez: modo de decodificación, búfer o bitrate. Consultar el apartado 12 de [PROYECTO_TV_AUTOMATIZADA.md](PROYECTO_TV_AUTOMATIZADA.md) para interpretar los síntomas.
-
-Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no corrige una fuente P2P sin pares.
-
-## Verificación de entrega
-
-- Implementados: configuración local, parser, validación CLI, generación determinista, deduplicación, control de orígenes, conservación ante fallos, informe, pruebas sintéticas y workflow.
-- Comprobado localmente: 28 pruebas automáticas, descarga actual de los siete catálogos, 2.312 candidatos únicos organizados y validados, y publicación protegida por autorización de fuente.
-- Comprobado en GitHub: repositorio público creado, Pages activo, workflows por push y ejecución manual correctos y URL pública válida.
-- Pendientes: observar la primera ejecución programada, aportar emisiones autorizadas reales y probar recarga/reproducción en la TV. La ejecución manual validada está en [Actions](https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39035177657).
-
-## Referencias verificadas
-
-- [FAQ oficial de OTT Navigator: atributos de playlist](https://ottnav.github.io/faq.html).
-- [GitHub: programación, zonas horarias y limitaciones](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
-- [GitHub: despliegues personalizados de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-
-La investigación posterior descargó catálogos públicos de las fuentes documentadas. Las listas sin permiso de publicación verificado permanecen fuera de Pages.
-
-La inspección de todos los enlaces inventariados está documentada en [REVISION_FUENTES.md](REVISION_FUENTES.md), con resultados y limitaciones por fuente.
-
-## Investigación ampliada de enlaces
-
-El [estudio de todas las fuentes](research/ESTUDIO.md) obtuvo **2.312 identificadores únicos** de recursos públicos HTTP e IPFS descargados. Se generó una lista local en `.research/canales-candidatos.m3u`, con procedencia por entrada y validación de estructura. Son candidatos sin comprobación de reproducción ni derechos; no se incorporan automáticamente a Pages. Los scripts y resultados resumidos están incluidos en el repositorio.
-
-Las listas de candidatos se organizan automáticamente por secciones, siguiendo el ejemplo facilitado: LA LIGA, HYPERMOTION, LIGA DE CAMPEONES, 1RFEF, DAZN y MOVISTAR DEPORTES, más categorías para el resto del catálogo. Cada bloque tiene un separador `# ===== SECCIÓN =====` y sus entradas comparten `group-title` para OTT Navigator. Las reglas y el orden se ajustan en `config/sections.json`; se consideran los nombres alternativos de cada ID y los casos sin coincidencia quedan en OTROS / SIN CLASIFICAR. La agrupación se aplica al regenerar o fusionar candidatos y conserva los 2.312 identificadores.
-
-## Actualización remota diaria
-
-`python3 scripts/refresh_sources.py --ipfs-bin /ruta/a/ipfs` descarga NEW ERA y ELCANO mediante Kubo nativo, descubre la versión actual del catálogo de Ace Stream UI, consulta Overtakefans y descarga la revisión vigente de tres Gists. El binario Kubo debe estar instalado; GitHub Actions lo descarga de la release oficial 0.43.1 y comprueba su SHA-512 antes de ejecutarlo. El nodo utiliza un directorio temporal y se detiene al terminar; no necesita un servidor permanente ni la sesión de tu ordenador.
-
-El actualizador genera `.research/canales-candidatos.m3u`, `.research/extracted.json` y `.research/refresh-status.json`. Mantiene las secciones configuradas y elimina IDs repetidos. En el runner los archivos de candidatos son temporales: **no se suben a Pages, Git ni a los artefactos**. Solo se guarda durante 14 días el informe de recuentos y fallos `refresh-report`, accesible en cada ejecución de Actions.
-
-Las fuentes remotas distinguen `enabled` (descargar para analizar) y `authorized` (permiso para publicar). No se han marcado como autorizados catálogos de terceros por el hecho de ser accesibles. Cuando exista autorización verificada, cambiar ese campo a `true` en la fuente correspondiente y subir el cambio activa su publicación con la misma URL de proveedor. No autorizar el catálogo entero si el permiso solo cubre parte de sus emisiones: en ese caso hay que seleccionar esas entradas por separado antes de publicarlas.
-
-Las descargas HTTPS restringen dominios y redirecciones, bloquean destinos DNS privados, fijan la IP validada para la conexión TLS y limitan tamaño y tiempo. No reintentan respuestas 403/429. Una fuente autorizada fallida impide el despliegue: Pages conserva la publicación anterior. Los fallos de fuentes que solo se analizan se reflejan en el informe sin convertirlas en fuentes publicables.
-
-Para revisar una actualización: abrir Actions → Update authorized TV playlist, comprobar los pasos de descarga y validación y descargar `refresh-report`. La ejecución manual permite probar el proceso sin esperar al horario diario. La primera ejecución programada y la recarga en una TV real siguen pendientes de observación.
-
-Validación en GitHub: [ejecución manual con descarga remota y despliegue correctos](https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39036879736). El informe de esa ejecución registró 2310 candidatos únicos; el detalle está en `research/automation-validation.json`. La URL pública se volvió a comprobar: continúa sirviendo las dos entradas de demo, ya que ninguna fuente remota se ha declarado autorizada para publicar.
+- [FAQ oficial de OTT Navigator](https://ottnav.github.io/faq.html).
+- [GitHub: programación y zonas horarias](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+- [GitHub: despliegues de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

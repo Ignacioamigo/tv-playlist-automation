@@ -1,16 +1,106 @@
 {
-  "attempted_at": "2026-10-17T13:05:14.424656+00:00",
+  "attempted_at": "2026-10-17T13:49:12.237655+00:00",
   "sources": [
     {
-      "id": "demo_local",
+      "id": "new_era",
       "ok": true,
-      "entries": 2
+      "entries": 371,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "elcano",
+      "ok": true,
+      "entries": 69,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "ace_ui",
+      "ok": true,
+      "entries": 1531,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "overtakefans",
+      "ok": true,
+      "entries": 12,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "gist_jahoyos",
+      "ok": true,
+      "entries": 302,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "gist_tristansp",
+      "ok": true,
+      "entries": 401,
+      "publish": true,
+      "cached": false,
+      "error": null
+    },
+    {
+      "id": "gist_redrusiam",
+      "ok": true,
+      "entries": 391,
+      "publish": true,
+      "cached": false,
+      "error": null
     }
   ],
-  "ok": true,
+  "complete": true,
   "published": true,
-  "changed": false,
-  "entries": 2,
-  "duplicates_removed": 0,
-  "sha256": "c21c3f883c529d3bd99825a6ef83448fb23c8cffad8be8925e17675f21bfb0c4"
+  "candidate_entries": 2312,
+  "publication_entries": 2312,
+  "sections": {
+    "LA LIGA": 83,
+    "HYPERMOTION": 14,
+    "LIGA DE CAMPEONES": 61,
+    "1RFEF": 2,
+    "DAZN": 129,
+    "MOVISTAR DEPORTES": 69,
+    "FORMULA 1": 8,
+    "MOTOGP Y MOTOR": 16,
+    "EUROSPORT": 50,
+    "FUTBOL INTERNACIONAL": 35,
+    "DEPORTES INTERNACIONALES": 237,
+    "CINE Y SERIES": 49,
+    "INFANTIL": 9,
+    "DOCUMENTALES": 12,
+    "MUSICA": 37,
+    "NOTICIAS": 49,
+    "GENERALISTAS ESPANA": 59,
+    "OTROS / SIN CLASIFICAR": 1393
+  },
+  "publication_sections": {
+    "LA LIGA": 83,
+    "HYPERMOTION": 14,
+    "LIGA DE CAMPEONES": 61,
+    "1RFEF": 2,
+    "DAZN": 129,
+    "MOVISTAR DEPORTES": 69,
+    "FORMULA 1": 8,
+    "MOTOGP Y MOTOR": 16,
+    "EUROSPORT": 50,
+    "FUTBOL INTERNACIONAL": 35,
+    "DEPORTES INTERNACIONALES": 237,
+    "CINE Y SERIES": 49,
+    "INFANTIL": 9,
+    "DOCUMENTALES": 12,
+    "MUSICA": 37,
+    "NOTICIAS": 49,
+    "GENERALISTAS ESPANA": 59,
+    "OTROS / SIN CLASIFICAR": 1393
+  },
+  "sha256": "9a4c83e853639c4a4cabfe7ba3974714787ff1d22eadc076dcf2f3dd097fe0e2"
 }

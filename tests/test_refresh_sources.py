@@ -17,7 +17,7 @@ class RefreshTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         (self.root / 'docs').mkdir()
         (self.root / 'docs/canales.m3u').write_text('previous valid publication')
-        self.sources = [{'id': 'one', 'name': 'One', 'type': 'https_catalog', 'enabled': True, 'authorized': False}]
+        self.sources = [{'id': 'one', 'name': 'One', 'type': 'https_catalog', 'enabled': True, 'publish': False}]
 
     def run_refresh(self, collector):
         config = self.root / 'config.json'
@@ -27,21 +27,21 @@ class RefreshTests(unittest.TestCase):
     def items(self, source, *args):
         return [{'name': 'DAZN LaLiga', 'url': 'acestream://' + 'a' * 40, 'source': source['name']}]
 
-    def test_unauthorized_catalogue_remains_local(self):
+    def test_unpublish_catalogue_remains_local(self):
         status = self.run_refresh(self.items)
         self.assertFalse(status['published'])
         self.assertEqual(status['candidate_entries'], 1)
         self.assertEqual((self.root / 'docs/canales.m3u').read_text(), 'previous valid publication')
         self.assertIn('group-title="LA LIGA"', (self.root / '.research/canales-candidatos.m3u').read_text())
 
-    def test_authorized_source_can_publish(self):
-        self.sources[0]['authorized'] = True
+    def test_publish_source_can_publish(self):
+        self.sources[0]['publish'] = True
         status = self.run_refresh(self.items)
         self.assertTrue(status['published'])
         self.assertEqual(status['publication_entries'], 1)
 
-    def test_partial_authorized_failure_preserves_publication(self):
-        self.sources[0]['authorized'] = True
+    def test_partial_publish_failure_preserves_publication(self):
+        self.sources[0]['publish'] = True
         self.sources.append(dict(self.sources[0], id='two'))
         def collector(source, *args):
             if source['id'] == 'two': raise ValueError('unavailable')
@@ -58,6 +58,30 @@ class RefreshTests(unittest.TestCase):
         def collector(*args): raise ValueError('failed')
         with self.assertRaises(ValueError): self.run_refresh(collector)
         self.assertEqual(output.read_text(), 'previous candidates')
+
+    def test_seed_backup_keeps_unavailable_source_in_publication(self):
+        self.sources[0]['publish'] = True
+        self.sources.append(dict(self.sources[0], id='two'))
+        backups = self.root / 'data/source-snapshots'
+        backups.mkdir(parents=True)
+        backup = [{'name': 'Eurosport', 'url': 'acestream://' + 'b' * 40, 'source': 'Two'}]
+        (backups / 'two.json').write_text(json.dumps(backup))
+        def collector(source, *args):
+            if source['id'] == 'two': raise ValueError('HTTP 403')
+            return self.items(source)
+        status = self.run_refresh(collector)
+        self.assertTrue(status['published'])
+        self.assertEqual(status['publication_entries'], 2)
+        self.assertTrue(status['sources'][1]['cached'])
+        self.assertFalse(status['complete'])
+
+    def test_total_outage_preserves_publication_even_with_cache(self):
+        self.sources[0]['publish'] = True
+        self.run_refresh(self.items)
+        original = (self.root / 'docs/canales.m3u').read_bytes()
+        def collector(*args): raise ValueError('unavailable')
+        with self.assertRaises(ValueError): self.run_refresh(collector)
+        self.assertEqual((self.root / 'docs/canales.m3u').read_bytes(), original)
 
     def test_dynamic_bundle_discovery(self):
         source = {'name': 'UI', 'type': 'web_catalog', 'url': 'https://source.example/', 'allowed_hosts': ['source.example']}

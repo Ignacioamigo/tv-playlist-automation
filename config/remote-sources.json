@@ -2,19 +2,86 @@
   "timeout_seconds": 25,
   "max_source_bytes": 2097152,
   "sources": [
-    {"id": "new_era", "type": "ipns_m3u", "name": "NEW ERA", "enabled": true, "authorized": false,
-     "names": ["k2k4r8lm8tkmuxbc8lkmq1in3v0oya1p6pe9o5bu0hu30br5ko08k2gb"], "path": "data/listas/lista_fuera_iptv.m3u"},
-    {"id": "elcano", "type": "ipns_m3u", "name": "ELCANO", "enabled": true, "authorized": false,
-     "names": ["k51qzi5uqu5di462t7j4vu4akwfhvtjhy88qbupktvoacqfqe9uforjvhyi4wr", "k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs"], "path": "hashes_acestream.m3u"},
-    {"id": "ace_ui", "type": "web_catalog", "name": "Ace Stream UI", "enabled": true, "authorized": false,
-     "url": "https://acestreamui.app/", "allowed_hosts": ["acestreamui.app"]},
-    {"id": "overtakefans", "type": "https_catalog", "name": "Overtakefans", "enabled": true, "authorized": false,
-     "url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player/", "allowed_hosts": ["overtakefans.com"]},
-    {"id": "gist_jahoyos", "type": "gist", "name": "Gist jahoyos", "enabled": true, "authorized": false,
-     "url": "https://api.github.com/gists/430bd27d303a095a5b200cbddb8efd5f", "allowed_hosts": ["api.github.com", "gist.githubusercontent.com"]},
-    {"id": "gist_tristansp", "type": "gist", "name": "Gist tristansp", "enabled": true, "authorized": false,
-     "url": "https://api.github.com/gists/e596fead1e99b92c38e47f87b0808ba8", "allowed_hosts": ["api.github.com", "gist.githubusercontent.com"]},
-    {"id": "gist_redrusiam", "type": "gist", "name": "Gist Redrusiam", "enabled": true, "authorized": false,
-     "url": "https://api.github.com/gists/1704843b4b26589687f2adf03456c50c", "allowed_hosts": ["api.github.com", "gist.githubusercontent.com"]}
+    {
+      "id": "new_era",
+      "type": "ipns_m3u",
+      "name": "NEW ERA",
+      "enabled": true,
+      "names": [
+        "k2k4r8lm8tkmuxbc8lkmq1in3v0oya1p6pe9o5bu0hu30br5ko08k2gb"
+      ],
+      "path": "data/listas/lista_fuera_iptv.m3u",
+      "publish": true
+    },
+    {
+      "id": "elcano",
+      "type": "ipns_m3u",
+      "name": "ELCANO",
+      "enabled": true,
+      "names": [
+        "k51qzi5uqu5di462t7j4vu4akwfhvtjhy88qbupktvoacqfqe9uforjvhyi4wr",
+        "k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs"
+      ],
+      "path": "hashes_acestream.m3u",
+      "publish": true
+    },
+    {
+      "id": "ace_ui",
+      "type": "web_catalog",
+      "name": "Ace Stream UI",
+      "enabled": true,
+      "url": "https://acestreamui.app/",
+      "allowed_hosts": [
+        "acestreamui.app"
+      ],
+      "publish": true
+    },
+    {
+      "id": "overtakefans",
+      "type": "https_catalog",
+      "name": "Overtakefans",
+      "enabled": true,
+      "url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player/",
+      "allowed_hosts": [
+        "overtakefans.com"
+      ],
+      "publish": true
+    },
+    {
+      "id": "gist_jahoyos",
+      "type": "gist",
+      "name": "Gist jahoyos",
+      "enabled": true,
+      "url": "https://api.github.com/gists/430bd27d303a095a5b200cbddb8efd5f",
+      "allowed_hosts": [
+        "api.github.com",
+        "gist.githubusercontent.com"
+      ],
+      "publish": true
+    },
+    {
+      "id": "gist_tristansp",
+      "type": "gist",
+      "name": "Gist tristansp",
+      "enabled": true,
+      "url": "https://api.github.com/gists/e596fead1e99b92c38e47f87b0808ba8",
+      "allowed_hosts": [
+        "api.github.com",
+        "gist.githubusercontent.com"
+      ],
+      "publish": true
+    },
+    {
+      "id": "gist_redrusiam",
+      "type": "gist",
+      "name": "Gist Redrusiam",
+      "enabled": true,
+      "url": "https://api.github.com/gists/1704843b4b26589687f2adf03456c50c",
+      "allowed_hosts": [
+        "api.github.com",
+        "gist.githubusercontent.com"
+      ],
+      "publish": true
+    }
   ]
 }

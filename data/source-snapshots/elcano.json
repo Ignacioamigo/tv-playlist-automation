@@ -1,0 +1,352 @@
+[
+  {
+    "name": "DAZN Baloncesto 720p *",
+    "url": "acestream://4005aabe21ba9c6d748845db91e4f48d99f58639",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN Baloncesto 1080p **",
+    "url": "acestream://2cfbb2cb8923b15b0ef74aba69e8137b0fbbba2e",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN Baloncesto 1080p **",
+    "url": "acestream://6fbd92735502bdebbf1ea58f4298e49759c0cf07",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN Baloncesto 2 720p *",
+    "url": "acestream://fc912a111ea5a88e02b858b5014d2358b11c84ac",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN Baloncesto 2 1080p **",
+    "url": "acestream://853129258a5cb51f27829eddb934e58b45978344",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN Baloncesto 3 720p *",
+    "url": "acestream://95125f755562c0ffcb44abd94e338bd65472afea",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Baloncesto 1080p **",
+    "url": "acestream://34b91125bd752462f1eca2d8d52f5f40fa761aa0",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Baloncesto 2 1080p **",
+    "url": "acestream://88113ee23295b8930ae328a88a8c1b861b8f21f1",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 1 1080p *",
+    "url": "acestream://dddff67edfa7061f643ec5ae0be110169850363d",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 1 1080p **",
+    "url": "acestream://78124d96a1a4601e7910f50e36a16e35efcfb398",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 2 720p **",
+    "url": "acestream://350bb4d726e2dd4dc4b2b17b59da783fdb07c11b",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 2 1080p *",
+    "url": "acestream://01ce89b571b6c89bc19ccaafc913d483ac65c61d",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 2 1080p **",
+    "url": "acestream://d60b8c154828cb990b7bb1570764b215bd979e74",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN 4 **",
+    "url": "acestream://9ced16b2055c99bf89c26e678e315e1b01d3734c",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Eurosport 1 720p **",
+    "url": "acestream://313213b3b99c0f7437f68c8ea5a7b2b6d7b8a153",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Eurosport 2 1080p *",
+    "url": "acestream://3ebcfc00921a4a9307dec97e078f8dc12eee27e7",
+    "source": "ELCANO"
+  },
+  {
+    "name": "LaLiga TV Hypermotion 720p **",
+    "url": "acestream://2c54a4def58f41fc0d2163450a63f12955b656aa",
+    "source": "ELCANO"
+  },
+  {
+    "name": "LaLiga TV Hypermotion 1080p **",
+    "url": "acestream://e4cbd1a425120b1f44b523a55bd1a98c31cad9fe",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 720p **",
+    "url": "acestream://385abcf801b787eec6ed6624908758bb165c0a55",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 1080p **",
+    "url": "acestream://9c588ac92554746c489bc553773d959f6d2dfd8e",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 1080p **",
+    "url": "acestream://7f9857c45764ef2c7cdfb619b89db3056a57a51f",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 2 720p *",
+    "url": "acestream://a70a1605f69c8379e04094df96922a42adfbb431",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 2 1080p *",
+    "url": "acestream://b63fcadc2390455d8a328f6c16b8b0a9adec21a3",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga 2 1080p **",
+    "url": "acestream://465075c02b7284f564911bd63d1c6f0a8d464be7",
+    "source": "ELCANO"
+  },
+  {
+    "name": "DAZN LaLiga **",
+    "url": "acestream://9c75f1d190c518cfe0f236415b8dccc1f676ef3b",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ LaLiga 720p *",
+    "url": "acestream://3ace1463a7cad979c3a4002b245487e9982e9f1a",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ LaLiga 1080p *",
+    "url": "acestream://0febfb5cac3384f487d55c559bbfc877db2d0357",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ LaLiga 1080p **",
+    "url": "acestream://d3b11d6c18ad43df5cd42c1dafb4dd12d8f829e8",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ LaLiga 1080p **",
+    "url": "acestream://a64e02a6d914f098cbe1b724ff4f7aef83419a4a",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Liga de Campeones 720p **",
+    "url": "acestream://931fd4c24398a24beb9b6ede856ca34339ff2c22",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Liga de Campeones 1080p **",
+    "url": "acestream://97df5b7824948972d041d8ca2a4d29c90b641bc9",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Liga de Campeones 1080p **",
+    "url": "acestream://91af434b0bb521189286f8cbbab1aed39d7536fe",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Liga de Campeones 2 720p **",
+    "url": "acestream://38f7b2044e549df2039ff26cefa6f9a60c854d5e",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Liga de Campeones 2 1080p **",
+    "url": "acestream://bb26037a253866d341778181eff5c8637240d615",
+    "source": "ELCANO"
+  },
+  {
+    "name": "MOVISTAR PLUS 720p *",
+    "url": "acestream://d23497596720b47b096ec0f850d6d26a19d1a336",
+    "source": "ELCANO"
+  },
+  {
+    "name": "MOVISTAR PLUS 1080p *",
+    "url": "acestream://ed74406ccdb3c21941b919db6bffca7f1de015bb",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 720p *",
+    "url": "acestream://6e031aed136bf97d8667fcd5fc49c73256928281",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 720p **",
+    "url": "acestream://7f8b4f57bf234510d3f607492508d68167d4b0ab",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 1080p *",
+    "url": "acestream://c6a824a81b36f6c3529826477caf2ad94b45776d",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 1080p **",
+    "url": "acestream://cf5327fe9c962a29dfff3868f4349ff2b0b4662f",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 2 720p *",
+    "url": "acestream://6b15368775693c33c49fab02e7900c1976a5da90",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 2 1080p *",
+    "url": "acestream://3774d8feab016ca766b35ea8488e7514ca30e0ee",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 3 1080p *",
+    "url": "acestream://f4d9011721fad5098febbe4d7c078a582e176a01",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Deportes 3 1080p **",
+    "url": "acestream://84aed52c5deb78f58595d88250e7a2bd04dfd810",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Golf 1080p *",
+    "url": "acestream://9bb2a7dc6c6a296609df8cc50e742a78194f7530",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Golf 1080p **",
+    "url": "acestream://8121478d3d3e563ad6b98018bc1c0aeb2f6166eb",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Golf 2 1080p *",
+    "url": "acestream://597cca4ef375529aaca0608b43187d99d26ca714",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Golf 2 1080p **",
+    "url": "acestream://882074140fca664e119a43294afa2fb4a64917ef",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Vamos 720p **",
+    "url": "acestream://7a053fc56fc93f42ec656382408e647055110e3e",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Vamos 1080p *",
+    "url": "acestream://6b60251bc893c4e79fdfa37a1f5f6212e73ea6f9",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ Vamos 1080p **",
+    "url": "acestream://26159ba451167e962f4f9236ab4c7626f7eb4e49",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ VAMOS 2 720p *",
+    "url": "acestream://c8c172886e466fbe443433f8e95d201e34edd879",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ VAMOS 2 1080p **",
+    "url": "acestream://0cd11c1f51b84ebe9954496b3ef9b6aeccf7307c",
+    "source": "ELCANO"
+  },
+  {
+    "name": "M+ VAMOS 3 1080p *",
+    "url": "acestream://b46a524780cf0ac5e533491fe79389d6198acf2c",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RFEF TV 1080p *",
+    "url": "acestream://7b742628b9f7e82902bdbc1ff92eba1988875cfc",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RFEF TV 1080p *",
+    "url": "acestream://177796041773be99b489dd3ce86144f243e7355f",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RFEF TV 1080p **",
+    "url": "acestream://854ff9c607101791346111cd2366a392c3b8c351",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RFEF TV 1080p **",
+    "url": "acestream://3fbc1b7dc316f19b77e7f7cfc775a0af67adcc7f",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Esport3 1080p *",
+    "url": "acestream://21bc11d195f5753c396e390c215952d21541d04d",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RALLY TV 1080p *",
+    "url": "acestream://64eb19dccf5e60f121a4c1f7c69489af6b1c9ca9",
+    "source": "ELCANO"
+  },
+  {
+    "name": "RALLY TV **",
+    "url": "acestream://12404b00d2787995d639ccf71a80da5d39d153f9",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Real Madrid TV 1080p *",
+    "url": "acestream://ac353757b626cedc6461d8eb73bfffa15fbb7be7",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Real Madrid TV 1080p **",
+    "url": "acestream://44ea3d00ee2abfd5d89792a32851d7af61f16f0a",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Teledeporte 1080p *",
+    "url": "acestream://b35b3eb8e22365bf3469efd6d1f3b82618a6e18a",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Teledeporte 1080p **",
+    "url": "acestream://77cf022557c56cdf8d8115f50e61f846ad72ee05",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Teledeporte 1080p **",
+    "url": "acestream://3b50a1dca0977e3761d016edd79314ab797f74f6",
+    "source": "ELCANO"
+  },
+  {
+    "name": "NBA ESPN 720p *",
+    "url": "acestream://bf3773e7f5e53c11347c70c18bd085322efbc90f",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Tennis Channel 1080p *",
+    "url": "acestream://a4cbadd19442b800727be713270fa9c917cc8582",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Tennis Channel 1080p **",
+    "url": "acestream://43c549e5781f5a923b76f8f29cde122b5be164eb",
+    "source": "ELCANO"
+  },
+  {
+    "name": "Paramount+ UFC **",
+    "url": "acestream://a895ab5bcc8beba2d2aa6d5aa332927f005baa65",
+    "source": "ELCANO"
+  }
+]
