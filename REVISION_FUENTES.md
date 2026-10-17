@@ -25,3 +25,25 @@ No se ha verificado en esta revisión una fuente directa con permiso de publicac
 El trabajo de inspección está realizado y no requiere que el usuario vuelva a proporcionar los mismos enlaces. Para incorporar una fuente concreta falta verificar el permiso del titular y su contrato técnico; acceder públicamente a una página no establece ese permiso. Las fuentes no verificadas no se han marcado artificialmente como `authorized: true`.
 
 La infraestructura de generación y publicación está operativa. Este informe no certifica derechos ni disponibilidad de vídeo y no sustituye una prueba desde la TV.
+
+## Segunda comprobación: conexión directa y DNSLink
+
+Se consultaron las cinco direcciones señaladas también desde el equipo, fuera de la herramienta web, con límite de 2 MiB y timeout de 15 segundos por conexión:
+
+- NEW ERA en `inbrowser.link`: HTTP 403.
+- ELCANO principal y las dos alternativas de `ipfs.io`: HTTP 429.
+- Web alternativa `vacaionesenelmar.xo.je`: timeout.
+
+La consulta DNS TXT de `_dnslink.elcano.top` devolvió:
+
+```text
+dnslink=/ipns/k51qzi5uqu5dgg9al11vomikugim0o1i3l3fxp3ym3jwaswmy9uz8pq4brg1u9
+```
+
+Ese nombre IPNS es diferente de las dos alternativas anotadas en el documento inicial. Es un dato de resolución DNS, no una playlist ni una prueba de disponibilidad del contenido.
+
+Se hizo una comprobación adicional mediante `dweb.link` para ese nombre actual y el nombre IPNS de NEW ERA; ambas devolvieron HTTP 429. No se reintentaron las peticiones ni se resolvieron captchas o controles de acceso. Los códigos observados no permiten atribuir el fallo con certeza al editor, al gateway o a un intermediario de red.
+
+Resultado: se encontró la referencia DNSLink actual de ELCANO, pero no se obtuvo el cuerpo de una lista. Ningún canal real se añadió a la publicación. La siguiente comprobación técnica posible es resolver el nombre con un nodo IPFS nativo; esta sesión no ha instalado ni ejecutado uno. No debe confundirse el nombre IPNS resuelto con una URL M3U compatible con OTT Navigator.
+
+Referencia del mecanismo: [documentación oficial de IPNS](https://docs.ipfs.tech/concepts/ipns/).
