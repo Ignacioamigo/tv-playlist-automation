@@ -1,0 +1,14 @@
+{
+  "refresh_hours": 3,
+  "max_source_bytes": 2097152,
+  "allowed_stream_hosts": ["example.org"],
+  "sources": [
+    {
+      "id": "demo_local",
+      "type": "local_m3u",
+      "path": "examples/canales-demo.m3u",
+      "enabled": true,
+      "authorized": true
+    }
+  ]
+}

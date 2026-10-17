@@ -1,0 +1,16 @@
+{
+  "attempted_at": "2026-10-17T13:05:14.424656+00:00",
+  "sources": [
+    {
+      "id": "demo_local",
+      "ok": true,
+      "entries": 2
+    }
+  ],
+  "ok": true,
+  "published": true,
+  "changed": false,
+  "entries": 2,
+  "duplicates_removed": 0,
+  "sha256": "c21c3f883c529d3bd99825a6ef83448fb23c8cffad8be8925e17675f21bfb0c4"
+}

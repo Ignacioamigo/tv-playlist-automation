@@ -1,0 +1,5 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="demo-1" group-title="Pruebas",Canal demo 1
+acestream://0123456789abcdef0123456789abcdef01234567
+#EXTINF:-1 tvg-id="demo-2" group-title="Pruebas",Canal demo 2
+https://example.org/stream-demo.m3u8
