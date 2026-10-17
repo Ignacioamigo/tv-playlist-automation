@@ -1,0 +1,41 @@
+[
+  {
+    "url": "https://gist.github.com/430bd27d303a095a5b200cbddb8efd5f",
+    "http": 200,
+    "files": [
+      {
+        "filename": "Canales.m3u",
+        "raw_url": "https://gist.githubusercontent.com/jahoyos/430bd27d303a095a5b200cbddb8efd5f/raw/2af0698929eaed954b4075782053feeb7fef0365/Canales.m3u",
+        "extinf_count": 137,
+        "unique_ids": 302
+      }
+    ],
+    "updated_at": "2025-08-11T16:47:33Z"
+  },
+  {
+    "url": "https://gist.github.com/e596fead1e99b92c38e47f87b0808ba8",
+    "http": 200,
+    "files": [
+      {
+        "filename": "lista_stremio.m3u",
+        "raw_url": "https://gist.githubusercontent.com/tristansp-arch/e596fead1e99b92c38e47f87b0808ba8/raw/3047238da380f90b9079666e6faaa4bee30e4f62/lista_stremio.m3u",
+        "extinf_count": 408,
+        "unique_ids": 401
+      }
+    ],
+    "updated_at": "2026-07-29T13:38:11Z"
+  },
+  {
+    "url": "https://gist.github.com/1704843b4b26589687f2adf03456c50c",
+    "http": 200,
+    "files": [
+      {
+        "filename": "gistfile1.m3u",
+        "raw_url": "https://gist.githubusercontent.com/Redrusiam/1704843b4b26589687f2adf03456c50c/raw/459bfa05b69c41b15b10c67045aeac2af3fa4ec9/gistfile1.m3u",
+        "extinf_count": 471,
+        "unique_ids": 391
+      }
+    ],
+    "updated_at": "2026-09-20T18:17:47Z"
+  }
+]

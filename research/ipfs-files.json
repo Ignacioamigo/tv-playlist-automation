@@ -1,0 +1,104 @@
+{
+  "snapshots": [
+    {
+      "name": "NEW ERA",
+      "root": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU",
+      "listings": [
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU",
+          "output": "QmegEwpMr6nZqqAwh2WddrhvSkmJ27ikQra88kNE3AWJZW -       data/\nQmfUQBeZpzzqR3mxCGP1og9SzaDq9J37rrhpnRDocv3KKz 6677215 index.html\n",
+          "error": ""
+        },
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data",
+          "output": "QmUJakUKJR9JSpnd4zPBFiYhnTUHZEujTYYbK7nYxVycHh - listas/\n",
+          "error": ""
+        },
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data/listas",
+          "output": "QmNYahUUrSZ2RZhSnh1R29V48hLBx638B4kLN3kyUApMaU 78200 lista_fuera_iptv.m3u\nQmSEbBJCXh7A9zNiVvjxcPk5oM3JY6MevhD7iATkfPNUsE 90109 lista_iptv.m3u\nQmPmwGuCZB9v1tba2KoiHg6iPet6kkFBbcgTKqKj1GoXbT 90104 lista_kodi.m3u\nQmUrbdBepBiUys4zdXNxdGYF4v27rG6Xqkv6mNZbKGm3FP 26622 listaplana.txt\n",
+          "error": ""
+        }
+      ],
+      "files": [
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data/listas/lista_fuera_iptv.m3u",
+          "cid": "QmNYahUUrSZ2RZhSnh1R29V48hLBx638B4kLN3kyUApMaU",
+          "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_fuera_iptv.m3u",
+          "bytes": 78200,
+          "extinf_count": 372
+        },
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data/listas/lista_iptv.m3u",
+          "cid": "QmSEbBJCXh7A9zNiVvjxcPk5oM3JY6MevhD7iATkfPNUsE",
+          "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_iptv.m3u",
+          "bytes": 90109,
+          "extinf_count": 372
+        },
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data/listas/lista_kodi.m3u",
+          "cid": "QmPmwGuCZB9v1tba2KoiHg6iPet6kkFBbcgTKqKj1GoXbT",
+          "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_kodi.m3u",
+          "bytes": 90104,
+          "extinf_count": 372
+        },
+        {
+          "path": "/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU/data/listas/listaplana.txt",
+          "cid": "QmUrbdBepBiUys4zdXNxdGYF4v27rG6Xqkv6mNZbKGm3FP",
+          "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-listaplana.txt",
+          "bytes": 26622,
+          "extinf_count": 0
+        }
+      ]
+    },
+    {
+      "name": "ELCANO alternativa 2",
+      "root": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g",
+      "listings": [
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g",
+          "output": "QmVG4ZeE2gY3USPhQHShGbYfvHF1eEUbysW484nRwrAQ7p 18030 hashes.json\nQmWPLJtGArzYT8XDebbRDMbsKXDHFhgxiYebyQVbYwK8Jg 18537 hashes.m3u\nQmQDbAmd8HriFCmz3bi44b8zY3DVeEfQkSHzQyNt1hQR4A 5583  hashes.txt\nQmPUQJFiPSeEizPFzr4SUtcBVeJsn5MyQTrWgK3uKBJ9DB 16647 hashes_acestream.m3u\nQmUpvz5QcUaRGHK6t95ddJBgrWcWQXvyRBRqxqX3TVh1YK 18887 hashes_kodi.m3u\nQmc9SDzXWLFPhiEdKncfa3B2Dgv5qXEEbfmz1yHsbxpPkS 35980 index.html\n",
+          "error": ""
+        }
+      ],
+      "files": [
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g/hashes.json",
+          "cid": "QmVG4ZeE2gY3USPhQHShGbYfvHF1eEUbysW484nRwrAQ7p",
+          "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes.json",
+          "bytes": 18030,
+          "extinf_count": 0
+        },
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g/hashes.m3u",
+          "cid": "QmWPLJtGArzYT8XDebbRDMbsKXDHFhgxiYebyQVbYwK8Jg",
+          "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes.m3u",
+          "bytes": 18537,
+          "extinf_count": 70
+        },
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g/hashes.txt",
+          "cid": "QmQDbAmd8HriFCmz3bi44b8zY3DVeEfQkSHzQyNt1hQR4A",
+          "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes.txt",
+          "bytes": 5583,
+          "extinf_count": 0
+        },
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g/hashes_acestream.m3u",
+          "cid": "QmPUQJFiPSeEizPFzr4SUtcBVeJsn5MyQTrWgK3uKBJ9DB",
+          "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_acestream.m3u",
+          "bytes": 16647,
+          "extinf_count": 70
+        },
+        {
+          "path": "/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g/hashes_kodi.m3u",
+          "cid": "QmUpvz5QcUaRGHK6t95ddJBgrWcWQXvyRBRqxqX3TVh1YK",
+          "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_kodi.m3u",
+          "bytes": 18887,
+          "extinf_count": 70
+        }
+      ]
+    }
+  ],
+  "daemon_stopped": true
+}

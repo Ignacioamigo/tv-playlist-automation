@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "name": "new-era-index.html",
+      "ok": true,
+      "bytes": 6677215,
+      "error": ""
+    },
+    {
+      "name": "new-era-listas.txt",
+      "ok": true,
+      "bytes": 278,
+      "error": "",
+      "listing": "QmNYahUUrSZ2RZhSnh1R29V48hLBx638B4kLN3kyUApMaU 78200 lista_fuera_iptv.m3u\nQmSEbBJCXh7A9zNiVvjxcPk5oM3JY6MevhD7iATkfPNUsE 90109 lista_iptv.m3u\nQmPmwGuCZB9v1tba2KoiHg6iPet6kkFBbcgTKqKj1GoXbT 90104 lista_kodi.m3u\nQmUrbdBepBiUys4zdXNxdGYF4v27rG6Xqkv6mNZbKGm3FP 26622 listaplana.txt\n"
+    }
+  ],
+  "daemon_stopped": true
+}

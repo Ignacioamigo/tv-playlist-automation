@@ -1,5 +1,7 @@
 # Revisión de fuentes del documento
 
+**Actualización:** el [estudio ampliado](research/ESTUDIO.md) ha localizado y extraído 2.312 identificadores únicos a una lista local. Las secciones siguientes conservan los resultados de las primeras inspecciones; ya no describen por sí solas el estado final de la investigación.
+
 Fecha: 17 de octubre de 2026. Inspección de páginas públicas mediante herramienta web; no se extrajeron ni publicaron identificadores de emisiones. Una consulta fallida no demuestra que un sitio esté caído, y la ausencia de una licencia visible no demuestra por sí sola una infracción.
 
 | Fuente | Resultado de la inspección | Incorporación |

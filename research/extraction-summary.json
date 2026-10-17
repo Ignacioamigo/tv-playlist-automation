@@ -1,0 +1,106 @@
+{
+  "checked_at": "2026-10-17T13:21:30.994866+00:00",
+  "source_entries": 4331,
+  "unique_ids": 2312,
+  "duplicates_removed": 2019,
+  "sources": [
+    {
+      "url": "https://acestreamui.app/static/js/main.b5a296a7.js",
+      "final_url": "https://acestreamui.app/static/js/main.b5a296a7.js",
+      "http": 200,
+      "content_type": "text/javascript",
+      "bytes": 622853,
+      "format": "text",
+      "extinf_count": 1,
+      "unique_acestream_ids": 0,
+      "name": "Ace Stream UI · catálogo estático",
+      "unique_ids": 1531
+    },
+    {
+      "url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player/",
+      "final_url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player/",
+      "http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 53462,
+      "format": "html",
+      "extinf_count": 0,
+      "unique_acestream_ids": 12,
+      "name": "Overtakefans",
+      "unique_ids": 12
+    },
+    {
+      "url": "https://gist.githubusercontent.com/jahoyos/430bd27d303a095a5b200cbddb8efd5f/raw/2af0698929eaed954b4075782053feeb7fef0365/Canales.m3u",
+      "final_url": "https://gist.githubusercontent.com/jahoyos/430bd27d303a095a5b200cbddb8efd5f/raw/2af0698929eaed954b4075782053feeb7fef0365/Canales.m3u",
+      "http": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 96146,
+      "format": "m3u",
+      "extinf_count": 137,
+      "unique_acestream_ids": 302,
+      "name": "Gist 430bd27d303a095a5b200cbddb8efd5f",
+      "unique_ids": 302
+    },
+    {
+      "url": "https://gist.githubusercontent.com/tristansp-arch/e596fead1e99b92c38e47f87b0808ba8/raw/3047238da380f90b9079666e6faaa4bee30e4f62/lista_stremio.m3u",
+      "final_url": "https://gist.githubusercontent.com/tristansp-arch/e596fead1e99b92c38e47f87b0808ba8/raw/3047238da380f90b9079666e6faaa4bee30e4f62/lista_stremio.m3u",
+      "http": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 87692,
+      "format": "m3u",
+      "extinf_count": 408,
+      "unique_acestream_ids": 401,
+      "name": "Gist e596fead1e99b92c38e47f87b0808ba8",
+      "unique_ids": 401
+    },
+    {
+      "url": "https://gist.githubusercontent.com/Redrusiam/1704843b4b26589687f2adf03456c50c/raw/459bfa05b69c41b15b10c67045aeac2af3fa4ec9/gistfile1.m3u",
+      "final_url": "https://gist.githubusercontent.com/Redrusiam/1704843b4b26589687f2adf03456c50c/raw/459bfa05b69c41b15b10c67045aeac2af3fa4ec9/gistfile1.m3u",
+      "http": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 100012,
+      "format": "m3u",
+      "extinf_count": 471,
+      "unique_acestream_ids": 391,
+      "name": "Gist 1704843b4b26589687f2adf03456c50c",
+      "unique_ids": 391
+    },
+    {
+      "name": "IPFS QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_fuera_iptv.m3u",
+      "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_fuera_iptv.m3u",
+      "unique_ids": 371
+    },
+    {
+      "name": "IPFS QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_iptv.m3u",
+      "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_iptv.m3u",
+      "unique_ids": 371
+    },
+    {
+      "name": "IPFS QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_kodi.m3u",
+      "file": ".research/ipfs/QmNPHsCoXSjN56mxWymaAbPbWTdfPZFa63otJAHTdzmFfU-lista_kodi.m3u",
+      "unique_ids": 371
+    },
+    {
+      "name": "IPFS Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes.m3u",
+      "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes.m3u",
+      "unique_ids": 70
+    },
+    {
+      "name": "IPFS Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_acestream.m3u",
+      "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_acestream.m3u",
+      "unique_ids": 70
+    },
+    {
+      "name": "IPFS Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_kodi.m3u",
+      "file": ".research/ipfs/Qma1Yfo8aKs8Vev1Fs3QFnepWro8buUgQicTaZjTrKRC4g-hashes_kodi.m3u",
+      "unique_ids": 70
+    },
+    {
+      "name": "IPFS new-era-index.html",
+      "file": ".research/ipfs/new-era-index.html",
+      "unique_ids": 371
+    }
+  ],
+  "playback_verified": false,
+  "redistribution_rights_verified": false,
+  "output": ".research/canales-candidatos.m3u"
+}

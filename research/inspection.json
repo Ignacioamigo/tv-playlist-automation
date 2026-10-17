@@ -1,0 +1,139 @@
+{
+  "checked_at": "2026-10-17T13:14:53.041667+00:00",
+  "sources": [
+    {
+      "url": "https://shickat.online/",
+      "error": "URLError",
+      "name": "SHICKAT",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://k2k4r8lm8tkmuxbc8lkmq1in3v0oya1p6pe9o5bu0hu30br5ko08k2gb.ipns.inbrowser.link",
+      "http": 403,
+      "error": "http_error",
+      "retry_after": null,
+      "name": "NEW ERA",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://ipfs.io/ipns/elcano.top",
+      "http": 429,
+      "error": "http_error",
+      "retry_after": "900",
+      "name": "ELCANO principal",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://ipfs.io/ipns/k51qzi5uqu5di462t7j4vu4akwfhvtjhy88qbupktvoacqfqe9uforjvhyi4wr",
+      "http": 429,
+      "error": "http_error",
+      "retry_after": "900",
+      "name": "ELCANO alternativa 1",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://ipfs.io/ipns/k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs/",
+      "http": 429,
+      "error": "http_error",
+      "retry_after": "900",
+      "name": "ELCANO alternativa 2",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://vacaionesenelmar.xo.je/",
+      "error": "URLError",
+      "name": "ELCANO web alternativa",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://acestreamui.app",
+      "final_url": "https://acestreamui.app",
+      "http": 200,
+      "content_type": "text/html",
+      "bytes": 1195,
+      "format": "html",
+      "extinf_count": 0,
+      "unique_acestream_ids": 0,
+      "name": "ACESTREAM UI",
+      "candidates": [],
+      "assets": [
+        {
+          "url": "https://acestreamui.app/static/js/main.b5a296a7.js",
+          "final_url": "https://acestreamui.app/static/js/main.b5a296a7.js",
+          "http": 200,
+          "content_type": "text/javascript",
+          "bytes": 622853,
+          "format": "text",
+          "extinf_count": 1,
+          "unique_acestream_ids": 0,
+          "candidates": []
+        }
+      ]
+    },
+    {
+      "url": "https://dvb-p.com/channels",
+      "error": "URLError",
+      "name": "DVB P",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://www.misterchire.com",
+      "error": "URLError",
+      "name": "MISTERCHIRE",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://ciriaco.netlify.app",
+      "error": "URLError",
+      "name": "CIRIACO",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://platinsport.com",
+      "error": "URLError",
+      "name": "PLATINSPORT",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player",
+      "final_url": "https://overtakefans.com/f1-live-stream/sky-sport-f1-live-stream-via-ace-player/",
+      "http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 53461,
+      "format": "html",
+      "extinf_count": 0,
+      "unique_acestream_ids": 12,
+      "name": "OVERTAKEFANS",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://myfootball.pw",
+      "http": 403,
+      "error": "http_error",
+      "retry_after": null,
+      "name": "MYFOOTBALL",
+      "candidates": [],
+      "assets": []
+    },
+    {
+      "url": "https://www.pimpletv.ru",
+      "error": "URLError",
+      "name": "PIMPLETV",
+      "candidates": [],
+      "assets": []
+    }
+  ],
+  "candidate_checks": [],
+  "note": "Structural counts only. No playback availability or redistribution rights verified."
+}
