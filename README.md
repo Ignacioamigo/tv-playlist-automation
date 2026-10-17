@@ -104,7 +104,7 @@ Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no
 ## Verificación de entrega
 
 - Implementados: configuración local, parser, validación CLI, generación determinista, deduplicación, control de orígenes, conservación ante fallos, informe, pruebas sintéticas y workflow.
-- Comprobado localmente: 17 pruebas automáticas, generación de dos entradas ficticias y validación del resultado.
+- Comprobado localmente: 20 pruebas automáticas, generación de dos entradas ficticias y validación del resultado.
 - Comprobado en GitHub: repositorio público creado, Pages activo, workflows por push y ejecución manual correctos y URL pública válida.
 - Pendientes: observar la primera ejecución programada, aportar emisiones autorizadas reales y probar recarga/reproducción en la TV. La ejecución manual validada está en [Actions](https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39035177657).
 
@@ -121,3 +121,5 @@ La inspección de todos los enlaces inventariados está documentada en [REVISION
 ## Investigación ampliada de enlaces
 
 El [estudio de todas las fuentes](research/ESTUDIO.md) obtuvo **2.312 identificadores únicos** de recursos públicos HTTP e IPFS descargados. Se generó una lista local en `.research/canales-candidatos.m3u`, con procedencia por entrada y validación de estructura. Son candidatos sin comprobación de reproducción ni derechos; no se incorporan automáticamente a Pages. Los scripts y resultados resumidos están incluidos en el repositorio.
+
+Las listas de candidatos se organizan automáticamente por secciones, siguiendo el ejemplo facilitado: LA LIGA, HYPERMOTION, LIGA DE CAMPEONES, 1RFEF, DAZN y MOVISTAR DEPORTES, más categorías para el resto del catálogo. Cada bloque tiene un separador `# ===== SECCIÓN =====` y sus entradas comparten `group-title` para OTT Navigator. Las reglas y el orden se ajustan en `config/sections.json`; se consideran los nombres alternativos de cada ID y los casos sin coincidencia quedan en OTROS / SIN CLASIFICAR. La agrupación se aplica al regenerar o fusionar candidatos y conserva los 2.312 identificadores.

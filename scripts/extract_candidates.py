@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, urlsplit
 from inspect_sources import fetch
+from sections import render_sections
 
 ROOT = Path(__file__).resolve().parents[1]
 ACE = re.compile(r'acestream://([a-fA-F0-9]{40})(?![a-fA-F0-9])', re.I)
@@ -84,14 +85,11 @@ def main():
     target = ROOT / '.research'
     target.mkdir(exist_ok=True)
     (target / 'extracted.json').write_text(json.dumps(entries, ensure_ascii=False, indent=2) + '\n')
-    lines = ['#EXTM3U refresh="3"']
-    for entry in sorted(unique.values(), key=lambda e: (e['name'].casefold(), e['url'])):
-        name = ' '.join(entry['name'].split())
-        lines.extend([f'#EXTINF:-1 group-title="Candidatos sin verificar",{name}', entry['url']])
-    (target / 'canales-candidatos.m3u').write_text('\n'.join(lines) + '\n')
+    text, sections = render_sections(entries)
+    (target / 'canales-candidatos.m3u').write_text(text)
     summary = {'checked_at': datetime.now(timezone.utc).isoformat(), 'source_entries': len(entries),
                'unique_ids': len(unique), 'duplicates_removed': len(entries) - len(unique),
-               'sources': reports, 'playback_verified': False, 'redistribution_rights_verified': False,
+               'sources': reports, 'sections': sections, 'playback_verified': False, 'redistribution_rights_verified': False,
                'output': '.research/canales-candidatos.m3u'}
     (ROOT / 'research/extraction-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: v for k, v in summary.items() if k != 'sources'}, indent=2))
