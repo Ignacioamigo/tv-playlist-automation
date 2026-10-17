@@ -5,6 +5,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 import os
 from pathlib import Path
@@ -153,8 +154,9 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
                     raise ValueError('Kubo unavailable')
                 items = collector(source, limit, timeout, ipfs)
                 return source, items, None
-            except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
-                return source, [], type(exc).__name__
+            except (OSError, ValueError, KeyError, http.client.HTTPException, subprocess.SubprocessError) as exc:
+                reason = str(exc) if re.fullmatch(r'HTTP \d{3}', str(exc)) else type(exc).__name__
+                return source, [], reason
         with ThreadPoolExecutor(max_workers=3) as pool:
             results = list(pool.map(fetch_one, sources))
         for source, items, error in results:
@@ -169,6 +171,7 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
     target = root / '.research'
     target.mkdir(parents=True, exist_ok=True)
     status = {'attempted_at': datetime.now(timezone.utc).isoformat(), 'sources': reports,
+              'complete': bool(reports) and all(r['ok'] for r in reports),
               'published': False, 'candidate_entries': 0, 'publication_entries': 0}
     if entries:
         text, counts = render_sections(entries)
@@ -202,6 +205,8 @@ def main():
         print('ERROR: no se publica una lista incompleta o inválida.')
         return 1
     print(f"Candidatos únicos: {status['candidate_entries']}; publicados desde fuentes autorizadas: {status['publication_entries']}")
+    if not status['complete']:
+        print('WARN: recopilación parcial; consultar refresh-report para las fuentes fallidas.')
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as handle:
             handle.write(f"published={str(status['published']).lower()}\n")

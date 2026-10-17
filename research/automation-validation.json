@@ -1,0 +1,82 @@
+{
+  "workflow": "https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39036879736",
+  "conclusion": "success",
+  "report": {
+    "attempted_at": "2026-10-17T13:31:50.775107+00:00",
+    "sources": [
+      {
+        "id": "new_era",
+        "ok": true,
+        "entries": 371,
+        "authorized": false,
+        "error": null
+      },
+      {
+        "id": "elcano",
+        "ok": true,
+        "entries": 70,
+        "authorized": false,
+        "error": null
+      },
+      {
+        "id": "ace_ui",
+        "ok": true,
+        "entries": 1531,
+        "authorized": false,
+        "error": null
+      },
+      {
+        "id": "overtakefans",
+        "ok": false,
+        "entries": 0,
+        "authorized": false,
+        "error": "ValueError"
+      },
+      {
+        "id": "gist_jahoyos",
+        "ok": true,
+        "entries": 302,
+        "authorized": false,
+        "error": null
+      },
+      {
+        "id": "gist_tristansp",
+        "ok": true,
+        "entries": 401,
+        "authorized": false,
+        "error": null
+      },
+      {
+        "id": "gist_redrusiam",
+        "ok": true,
+        "entries": 391,
+        "authorized": false,
+        "error": null
+      }
+    ],
+    "published": false,
+    "candidate_entries": 2310,
+    "publication_entries": 0,
+    "sections": {
+      "LA LIGA": 83,
+      "HYPERMOTION": 14,
+      "LIGA DE CAMPEONES": 61,
+      "1RFEF": 2,
+      "DAZN": 129,
+      "MOVISTAR DEPORTES": 69,
+      "FORMULA 1": 2,
+      "MOTOGP Y MOTOR": 16,
+      "EUROSPORT": 50,
+      "FUTBOL INTERNACIONAL": 35,
+      "DEPORTES INTERNACIONALES": 241,
+      "CINE Y SERIES": 49,
+      "INFANTIL": 9,
+      "DOCUMENTALES": 12,
+      "MUSICA": 37,
+      "NOTICIAS": 49,
+      "GENERALISTAS ESPANA": 59,
+      "OTROS / SIN CLASIFICAR": 1393
+    }
+  },
+  "pages_entries": 2
+}
