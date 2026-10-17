@@ -36,7 +36,8 @@ def render_sections(entries: list[dict], config: Path = DEFAULT_CONFIG) -> tuple
                 selected, group = matches[0], section
                 break
         logo, logo_status = select_logo([selected] + variants, logo_index)
-        grouped.setdefault(group, []).append(dict(selected, url=url, logo=logo))
+        priority = 0 if any(v.get('catalog_priority') == 0 for v in variants) else 1
+        grouped.setdefault(group, []).append(dict(selected, url=url, logo=logo, catalog_priority=priority))
     lines = ['#EXTM3U refresh="3"']
     counts = Counter()
     for group in cfg['order']:
@@ -44,7 +45,7 @@ def render_sections(entries: list[dict], config: Path = DEFAULT_CONFIG) -> tuple
         if not items:
             continue
         lines.extend(['', f'# ===== {group} ====='])
-        for entry in sorted(items, key=lambda e: (natural_key(e['name']), e['url'])):
+        for entry in sorted(items, key=lambda e: (e['catalog_priority'], natural_key(e['name']), e['url'])):
             name = ' '.join(entry['name'].split())
             lines.extend([f'#EXTINF:-1 tvg-logo="{entry["logo"]}" group-title="{group}",{name}', entry['url']])
         counts[group] = len(items)

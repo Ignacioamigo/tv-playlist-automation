@@ -40,6 +40,19 @@ class RefreshTests(unittest.TestCase):
         self.assertTrue(status['published'])
         self.assertEqual(status['publication_entries'], 1)
 
+    def test_direct_profile_does_not_remove_complete_catalogue(self):
+        self.sources[0].update(publish=True, direct=True)
+        self.sources.append(dict(self.sources[0], id='extra', direct=False))
+        def collector(source, *args):
+            return [{'name': source['name'], 'url': 'acestream://' + ('b' if source['id'] == 'extra' else 'a') * 40,
+                     'source': source['name']}]
+        status = self.run_refresh(collector)
+        self.assertEqual(status['publication_entries'], 2)
+        self.assertEqual(status['direct_entries'], 1)
+        direct = (self.root / 'docs/directos.m3u').read_text()
+        self.assertIn('acestream://' + 'a'*40, direct)
+        self.assertNotIn('acestream://' + 'b'*40, direct)
+
     def test_partial_publish_failure_preserves_publication(self):
         self.sources[0]['publish'] = True
         self.sources.append(dict(self.sources[0], id='two'))

@@ -3850,5 +3850,689 @@
     "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4cf991b8921d3fa7de6a1054.png",
     "channel": "SportdigitalFUSSBALL.de",
     "original_url": "https://i.imgur.com/NDbWxqF.png"
+  },
+  "MC EU TV": {
+    "source": "iptv-org",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/c80323cb5201de78de2b7f2c.png",
+    "channel": "MCTV.de",
+    "original_url": "https://upload.wikimedia.org/wikipedia/tr/c/ca/MC_TV_logosu.png"
+  },
+  "N24 DOKU": {
+    "source": "iptv-org",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/e044ada537df6b2fabf786f7.png",
+    "channel": "N24Doku.de",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/N24Doku.svg/960px-N24Doku.svg.png"
+  },
+  "NBA TV": {
+    "source": "iptv-org",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/535ee4e2c6c93869005050eb.png",
+    "channel": "NBATV.us",
+    "original_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/NBA_TV.svg/960px-NBA_TV.svg.png"
+  },
+  "NEWSMAX TV": {
+    "source": "iptv-org",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/6001fb4c45e5a88880202a70.png",
+    "channel": "NewsmaxTV.us",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Newsmax_logo.svg/960px-Newsmax_logo.svg.png"
+  },
+  "ORF 1": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/7cfdc450e86895ad07db20b9.png",
+    "channel": "ORF 1 ...363",
+    "original_url": "https://i.ibb.co/znGYPyK/ORF.png"
+  },
+  "ORF SPORT": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/7cfdc450e86895ad07db20b9.png",
+    "channel": "ORF Sport+ ...974",
+    "original_url": "https://i.ibb.co/znGYPyK/ORF.png"
+  },
+  "RTL UP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a5a17abd68c0e713dce74bcd.png",
+    "channel": "RTL UP ...55a",
+    "original_url": "https://i.ibb.co/WvNPBzhJ/RTLup.png"
+  },
+  "HYPERMOTION": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/53451ba7c0a9a42dbbe69303.png",
+    "channel": "HYPERMOTION --> ELCANO",
+    "original_url": "https://i.ibb.co/CBdGc9f/hypermotion1.png"
+  },
+  "PARAMOUNT UFC": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4432ab867a363da6342747ae.png",
+    "channel": "Paramount+ UFC **",
+    "original_url": "https://cdn2.downdetector.com/static/uploads/logo/download-2_kvCjesa.png"
+  },
+  "MOVISTAR L CAMPEONES 1": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a7bd3a2cbb62c456a3023442.png",
+    "channel": "M.L. Campeones 1 ...370",
+    "original_url": "https://i.ibb.co/mTJyHFL/camp01.png"
+  },
+  "MOVISTAR L CAMPEONES 2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/2deb78dfd500cd2d9949a558.png",
+    "channel": "M.L. Campeones 2 ...eea",
+    "original_url": "https://i.ibb.co/187Ky7T/camp02.png"
+  },
+  "MOVISTAR L CAMPEONES 3": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/722c1077b88e10c9e9447068.png",
+    "channel": "M.L. Campeones 3 ...ce8",
+    "original_url": "https://i.ibb.co/pJ5dZBG/camp03.png"
+  },
+  "MOVISTAR L CAMPEONES 4": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/12f78cc0a9b64cdc1fc1d240.png",
+    "channel": "M.L. Campeones 4 ...661",
+    "original_url": "https://i.ibb.co/9GtKncC/camp04.png"
+  },
+  "DIRECT SPORT 1": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/0c45e96480cebb19ce83efa3.png",
+    "channel": "Direct Sport 1 1080p * --> ELCANO ...d49",
+    "original_url": "https://dsports-widgets.tbxnet.com/assets/images/channels/1610.png"
+  },
+  "DIRECT SPORT": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/0c45e96480cebb19ce83efa3.png",
+    "channel": "Direct Sport 1080p * --> ELCANO ...d1f",
+    "original_url": "https://dsports-widgets.tbxnet.com/assets/images/channels/1610.png"
+  },
+  "DIRECT SPORT 2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f4be924d14ab60e0f1e878fe.png",
+    "channel": "Direct Sport 2 1080p * --> ELCANO ...061",
+    "original_url": "https://dsports-widgets.tbxnet.com/assets/images/channels/1612.png"
+  },
+  "GOL TV": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/fe0e625f5047cb68d5194830.png",
+    "channel": "Gol TV 1080p * --> ELCANO ...ec1",
+    "original_url": "https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/GOL.png"
+  },
+  "ORF 2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/7cfdc450e86895ad07db20b9.png",
+    "channel": "ORF 2 ...edd",
+    "original_url": "https://i.ibb.co/znGYPyK/ORF.png"
+  },
+  "ORF 3": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/7cfdc450e86895ad07db20b9.png",
+    "channel": "ORF 3 ...86a",
+    "original_url": "https://i.ibb.co/znGYPyK/ORF.png"
+  },
+  "RTL 2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a3583231a54d9fc625fc297d.png",
+    "channel": "RTL 2 HD ...8de",
+    "original_url": "https://i.ibb.co/6R93dcJ5/RTL2.png"
+  },
+  "BEIN SPORTS 1 CC6": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/69d9aa3d913f1a493bdb136a.png",
+    "channel": "Bein Sports 1 cc6 ...fe0",
+    "original_url": "https://i.ibb.co/CQNdqNG/Bein1.png"
+  },
+  "BEIN SPORTS 2 FE0": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/84f9929ed3fedfa69599d2ca.png",
+    "channel": "Bein Sports 2 fe0 ...0bc",
+    "original_url": "https://i.ibb.co/4KdLb6X/Bein2.png"
+  },
+  "BEIN SPORTS 3 0BC": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/fe58a2bb582badbd37514b24.png",
+    "channel": "Bein Sports 3 0bc ...cf8",
+    "original_url": "https://i.ibb.co/k2XVS6h/Bein3.png"
+  },
+  "SKY SPORT MAIN EVENT CF8": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/9b0e5f02027e7fa069b25e46.png",
+    "channel": "Sky Sport Main Event cf8 ...f5e",
+    "original_url": "https://i.ibb.co/8r7M1Fy/mainevent.png"
+  },
+  "SKY SPORT PREMIER LEAGUE F5E": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/407ade54176e2870ef38dd21.png",
+    "channel": "Sky Sport Premier League f5e ...38e",
+    "original_url": "https://i.ibb.co/w4sF0dt/premier.png"
+  },
+  "SKY SPORT FOOTBALL 38E": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/6edc488f6beaa2946cf49410.png",
+    "channel": "Sky Sport Football 38e ...26d",
+    "original_url": "https://i.ibb.co/whnhzMk/skyfootball.png"
+  },
+  "SKY SPORT ARENA 26D": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/e787e98ea632f349096659dd.png",
+    "channel": "Sky Sport Arena 26d ...79c",
+    "original_url": "https://i.ibb.co/fx1tbCQ/Skyarena.png"
+  },
+  "SKY SPORT CRICKET 79C": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/bfa40b9b57f3d1b16734b8e2.png",
+    "channel": "Sky Sport Cricket 79c ...ddd",
+    "original_url": "https://i.ibb.co/c3B7YKK/Sky-Cricket.png"
+  },
+  "TNT SPORT 1 DDD": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4b23b1cfe935c268d2d7d28a.png",
+    "channel": "TNT Sport 1 1080 ddd ...c5b",
+    "original_url": "https://i.ibb.co/ZN1bxkV/TNT1.png"
+  },
+  "TNT SPORT 2 C5B": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/51808b6e0ee1e05d28cfe7b0.png",
+    "channel": "TNT Sport 2 1080 c5b ...801",
+    "original_url": "https://i.ibb.co/wQ5ChWr/TNT2.png"
+  },
+  "TNT SPORT 3 801": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a0d04bd3b214769227a47091.png",
+    "channel": "TNT Sport 3 1080 801 ...033",
+    "original_url": "https://i.ibb.co/M9VGB7X/TNT3.png"
+  },
+  "TNT SPORT 4 033": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/28693ef3931372bd6f0a66a0.png",
+    "channel": "TNT Sport 4 1080 033 ...bce",
+    "original_url": "https://i.ibb.co/xjXMsJw/TNT4.png"
+  },
+  "PREMIER SPORTS 1 BCE": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/40e84a37762a6a3bc4556910.png",
+    "channel": "Premier Sports 1 bce ...565",
+    "original_url": "https://i.ibb.co/10xGrD4/Premier1.png"
+  },
+  "PREMIER SPORTS 2 565": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/ba0b8bc38dba2166f30f5c96.png",
+    "channel": "Premier Sports 2 565 ...537",
+    "original_url": "https://i.ibb.co/cbMRYqK/Premier2.png"
+  },
+  "SKY SPORT CALCIO 537": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/04e061f29d3f60ad89db9141.png",
+    "channel": "Sky Sport Calcio HD 537 ...955",
+    "original_url": "https://i.ibb.co/ydSCL5d/skycalcio.png"
+  },
+  "SKY SPORT TENNIS 955": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f6295f4ac50d804a2b7a9961.png",
+    "channel": "Sky Sport Tennis HD 955 ...dd7",
+    "original_url": "https://i.ibb.co/mbvYBhq/skytenis.png"
+  },
+  "SKY SPORT UNO DD7": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/81522f109bd01be5bd1c40e3.png",
+    "channel": "Sky Sport Uno HD dd7 ...98a",
+    "original_url": "https://i.ibb.co/vsVNp2k/skyuno.png"
+  },
+  "SKY SPORT24 98A": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/bcd118b7d75e08f4db57aef2.png",
+    "channel": "Sky Sport24 HD 98a ...8e2",
+    "original_url": "https://i.ibb.co/d5kcnhk/Sky24.png"
+  },
+  "SKY SPORT ARENA 8E2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/e787e98ea632f349096659dd.png",
+    "channel": "Sky Sport Arena HD 8e2 ...3ae",
+    "original_url": "https://i.ibb.co/rwbLzGv/skyarena.png"
+  },
+  "SKY SPORT GOLF 3AE": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/64919480ec948b3c63ddc679.png",
+    "channel": "Sky Sport Golf HD 3ae ...4e2",
+    "original_url": "https://i.ibb.co/C1kgKgR/skygolf.png"
+  },
+  "SKY SPORT NBA 4E2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/d757fa5db0004baa6a58e203.png",
+    "channel": "Sky Sport NBA HD 4e2 ...6b5",
+    "original_url": "https://i.ibb.co/TkkM9ZN/skyNBA.png"
+  },
+  "SKY SPORT F1 6B5": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/3e57df90060ae3b4a71407bf.png",
+    "channel": "Sky Sport F1 HD 6b5 ...982",
+    "original_url": "https://i.ibb.co/GpMTt4N/skyF1.png"
+  },
+  "SKY SPORT MOTOGP 982": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/916d48370ca9d56543fcfd17.png",
+    "channel": "Sky Sport MotoGP HD 982 ...9b4",
+    "original_url": "https://i.ibb.co/CwQkrVN/skymoto-GP.png"
+  },
+  "ESPN 1 9B4": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a748e1b01a106bff4ca63f6f.png",
+    "channel": "ESPN 1 9b4 ...dab",
+    "original_url": "https://i.ibb.co/ZgC56qF/ESPN.png"
+  },
+  "ESPN 2 DAB": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/3ac534119e266d8f589d42e3.png",
+    "channel": "ESPN 2 dab ...e63",
+    "original_url": "https://i.ibb.co/3CBVFyf/ESPN-2.png"
+  },
+  "ESPN 3 E63": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/920b03eb487f1e8b9248b20d.png",
+    "channel": "ESPN 3 e63 ...40a",
+    "original_url": "https://i.ibb.co/42N00FS/ESPN-3.png"
+  },
+  "ESPN 4 40A": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/0493de9e6e8916c57e2d28b3.png",
+    "channel": "ESPN 4 40a ...87a",
+    "original_url": "https://i.ibb.co/n0KqZsX/ESPN-4.png"
+  },
+  "TVP SPORT 27F": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/fe9ffe2081f5c8a4e5cf8898.png",
+    "channel": "TVP Sport HD 27f ...867",
+    "original_url": "https://i.ibb.co/Gck11Fx/TVPsport.png"
+  },
+  "ELEVEN SPORT 1 867": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a32912d05906f023ef3dddee.png",
+    "channel": "Eleven Sport 1 4k 867 ...652",
+    "original_url": "https://i.ibb.co/105yk9z/Eleven1.png"
+  },
+  "ELEVEN SPORT 1 652": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a32912d05906f023ef3dddee.png",
+    "channel": "Eleven Sport 1 652 ...f00",
+    "original_url": "https://i.ibb.co/105yk9z/Eleven1.png"
+  },
+  "ELEVEN SPORT 2 F00": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/82edbbbdef35c9d0df2c55a0.png",
+    "channel": "Eleven Sport 2 f00 ...1f9",
+    "original_url": "https://i.ibb.co/Hd5r2GW/Eleven2.png"
+  },
+  "ELEVEN SPORT 3 1F9": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/57cf59a040fa4fbc069572d2.png",
+    "channel": "Eleven Sport 3 1f9 ...212",
+    "original_url": "https://i.ibb.co/1TmpGz3/Eleven3.png"
+  },
+  "ELEVEN SPORT 4 212": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/6c063153e98fbf569c7ef968.png",
+    "channel": "Eleven Sport 4 212 ...e09",
+    "original_url": "https://i.ibb.co/zP0LgCW/Eleven4.png"
+  },
+  "EXTREME SPORTS E09": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a57d70908eca1a1cfe2d02ab.png",
+    "channel": "Extreme Sports e09 ...082",
+    "original_url": "https://i.ibb.co/dmyPsLC/Xtreme.png"
+  },
+  "SPORT KLUB 082": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/d62e3e8258eb98c76ebe218a.png",
+    "channel": "Sport Klub 082 ...2ee",
+    "original_url": "https://i.ibb.co/HCsWQvw/Sport-Klub.png"
+  },
+  "POLSAT SPORT PREMIUM 1 2EE": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a707ae73a767ff1ed28f3ffa.png",
+    "channel": "Polsat Sport Premium 1 2ee ...99f",
+    "original_url": "https://i.ibb.co/TbVY69t/Polsat-Sport-Pr1.png"
+  },
+  "POLSAT SPORT PREMIUM 2 99F": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4a9363f9958c2d8ea42f2dce.png",
+    "channel": "Polsat Sport Premium 2 99f ...95f",
+    "original_url": "https://i.ibb.co/7460Stj/Polsat-Sport-Pr2.png"
+  },
+  "POLSAT SPORT 95F": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/516bb99629c7fac382562c2d.png",
+    "channel": "Polsat Sport 95f ...0ee",
+    "original_url": "https://i.ibb.co/2PmP98N/Polsat-Sport.png"
+  },
+  "POLSAT SPORT EXTRA 0EE": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/2024db9b699d934739d40d33.png",
+    "channel": "Polsat Sport Extra 0ee ...22f",
+    "original_url": "https://i.ibb.co/Z8GJm63/Polstat-Sport-Extra.png"
+  },
+  "POLSAT SPORT FIGHT 22F": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f0dce0c7e7e19ee08a3f08da.png",
+    "channel": "Polsat Sport Fight 22f ...b4b",
+    "original_url": "https://i.ibb.co/sjkkJhd/Polsat-Sport-Fight.png"
+  },
+  "CANAL SPORTS 1 B4B": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/cac8f564f57251b6b26788f0.png",
+    "channel": "Canal+ Sports 1 b4b ...ed7",
+    "original_url": "https://i.ibb.co/d7zXN9T/Canal.png"
+  },
+  "CANAL SPORTS 2 ED7": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/8e3db4346c5cc44dc6ff9f48.png",
+    "channel": "Canal+ Sports 2 ed7 ...1d3",
+    "original_url": "https://i.ibb.co/vv1cg5D/Canal-2.png"
+  },
+  "CANAL SPORTS 3 1D3": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/0f74a8e6f475e399a448f91a.png",
+    "channel": "Canal+ Sports 3 1d3 ...944",
+    "original_url": "https://i.ibb.co/qB3B481/Canal-3.png"
+  },
+  "CANAL SPORTS 4 944": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/9a0abaeb2af2a51c1f5fec85.png",
+    "channel": "Canal+ Sports 4 944 ...bd7",
+    "original_url": "https://i.ibb.co/mTMYzDx/Canal-4.png"
+  },
+  "CANAL SPORTS 5 BD7": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/ee7286aca28bac0288b7ba0a.png",
+    "channel": "Canal+ Sports 5 bd7 ...540",
+    "original_url": "https://i.ibb.co/59jhh5Z/Canal-5.png"
+  },
+  "MOTOWIZJA 540": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/8a6a24c1cabec48e06d5eabc.png",
+    "channel": "Motowizja 540 ...350",
+    "original_url": "https://i.ibb.co/vvsgN0T/Motowizja.png"
+  },
+  "GOLF CHANNEL 350": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/80865b012b32c1138f22d60b.png",
+    "channel": "Golf Channel 350 ...689",
+    "original_url": "https://i.ibb.co/RcQtWGG/Golf.png"
+  },
+  "ELEVEN SPORT 1 689": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/8c7e3931de0b3776bae4a67d.png",
+    "channel": "Eleven Sport 1 689 ...51b",
+    "original_url": "https://i.ibb.co/RBPb12F/Eleven1.png"
+  },
+  "ELEVEN SPORT 2 51B": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/096a15abf768cbbd907d2d4e.png",
+    "channel": "Eleven Sport 2 51b ...fce",
+    "original_url": "https://i.ibb.co/vddFjGL/Eleven2.png"
+  },
+  "ELEVEN SPORT 3 FCE": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/a8a57d048440bc235b5ba568.png",
+    "channel": "Eleven Sport 3 fce ...f1e",
+    "original_url": "https://i.ibb.co/wYSjdjR/Eleven3.png"
+  },
+  "ELEVEN SPORT 4 F1E": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/cbdb7379b938a1e46181934c.png",
+    "channel": "Eleven Sport 4 f1e ...b98",
+    "original_url": "https://i.ibb.co/R4MHd5t/Eleven4.png"
+  },
+  "ELEVEN SPORT 5 B98": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/de1f527189dfd18d1e9567f4.png",
+    "channel": "Eleven Sport 5 b98 ...08a",
+    "original_url": "https://i.ibb.co/J5j1qB8/Eleven5.png"
+  },
+  "ELEVEN SPORT 6 08A": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/c7e2598b610c85332c19ec62.png",
+    "channel": "Eleven Sport 6 08a ...a80",
+    "original_url": "https://i.ibb.co/zF8ZQTF/Eleven6.png"
+  },
+  "DIGI SPORT 1 A80": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/b2a260fec19d375c3219dde5.png",
+    "channel": "DIGI Sport 1 HD a80 ...89d",
+    "original_url": "https://i.ibb.co/qyjDf7B/Digi1.png"
+  },
+  "DIGI SPORT 1 89D": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/b2a260fec19d375c3219dde5.png",
+    "channel": "DIGI Sport 1 HD 89d ...d03",
+    "original_url": "https://i.ibb.co/qyjDf7B/Digi1.png"
+  },
+  "DIGI SPORT 2 D03": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/6bd56d36b0256bbef8d7799c.png",
+    "channel": "DIGI Sport 2 HD d03 ...412",
+    "original_url": "https://i.ibb.co/mFYg6hr/digi2.png"
+  },
+  "DIGI SPORT 3 412": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/8acd3a5d09c63882739ccd7e.png",
+    "channel": "DIGI Sport 3 HD 412 ...040",
+    "original_url": "https://i.ibb.co/Lzk0Jkd/digi3.png"
+  },
+  "MATCH 040": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/df114ee177d42dfcefa5d8f3.png",
+    "channel": "MATCH! HD 040 ...ef2",
+    "original_url": "https://i.ibb.co/NZQJc5R/MTV.png"
+  },
+  "MATCH FOOTBALL EF2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/27dc2ed5afa835a500ed2e33.png",
+    "channel": "MATCH! Football HD ef2 ...0a9",
+    "original_url": "https://i.ibb.co/rZkdQg5/Mfootball1.png"
+  },
+  "MATCH FOOTBALL 2 0A9": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/29b8284dbbb14db56b6ba820.png",
+    "channel": "MATCH! Football 2 0a9 ...f04",
+    "original_url": "https://i.ibb.co/Wzkyp7j/Mfootball2.png"
+  },
+  "MATCH FOOTBALL 3 F04": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4e72598bae28a903f3a244a8.png",
+    "channel": "MATCH! Football 3 f04 ...40e",
+    "original_url": "https://i.ibb.co/KmzhVjp/Mfootball3.png"
+  },
+  "MATCH PRIME 40E": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/d7b95143a746fba71f84b1bf.png",
+    "channel": "MATCH! Prime HD 40e ...a12",
+    "original_url": "https://i.ibb.co/xmSHp48/Mprime.png"
+  },
+  "MATCH BOETS A12": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/e9b07c3b7f6bcaf147f9a3af.png",
+    "channel": "MATCH! Boets a12 ...bfa",
+    "original_url": "https://i.ibb.co/0YPbfm9/Mboets.png"
+  },
+  "MATCH ARENA BFA": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/095eaa0e6f10559ed924d2da.png",
+    "channel": "MATCH! Arena HD bfa ...ab5",
+    "original_url": "https://i.ibb.co/tPBz7KW/Marena.png"
+  },
+  "MATCH NASH SPORT AB5": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f7a31ffe323cc94aedaafcac.png",
+    "channel": "MATCH! Nash Sport HD ab5 ...771",
+    "original_url": "https://i.ibb.co/wwRj0sY/Mnash.png"
+  },
+  "MATCH IGRA 771": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/5b58487ab48522b755a50c96.png",
+    "channel": "MATCH! Igra HD 771 ...73c",
+    "original_url": "https://i.ibb.co/n3vxk93/Migra.png"
+  },
+  "FIGHTBOX 73C": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/65a819290a22c580b7484b7b.png",
+    "channel": "FightBox HD 73c ...640",
+    "original_url": "https://i.ibb.co/R085W5P/Fightbox.png"
+  },
+  "FAST FUNBOX 640": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/54d3e81a13357a676c00a70c.png",
+    "channel": "Fast&funbox HD 640 ...d18",
+    "original_url": "https://i.ibb.co/prNxGrv2/fast.png"
+  },
+  "KHL D18": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/c37f3c495a25219cb5fe5c26.png",
+    "channel": "KHL d18 ...dc0",
+    "original_url": "https://i.ibb.co/KszV7nC/KHL.png"
+  },
+  "KHL PRIME DC0": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f9b090bd2ec2363f24926ba2.png",
+    "channel": "KHL Prime dc0 ...b3b",
+    "original_url": "https://i.ibb.co/VjG49Vk/KHLp.png"
+  },
+  "VIASAT SPORT B3B": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/b4223d96e2b3a4dc9db8b65b.png",
+    "channel": "Viasat Sport b3b ...a0b",
+    "original_url": "https://i.ibb.co/Qp2jr5k/Viasat.png"
+  },
+  "ФУТБОЛ A0B": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/668bc427a63e1de77cd9803e.png",
+    "channel": "Футбол HD a0b ...6dd",
+    "original_url": "https://i.ibb.co/nQRnPMY/Football.png"
+  },
+  "EUROSPORT 1 6DD": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/b80b9a77e25e2718c3261640.png",
+    "channel": "EuroSport 1 HD 6dd ...a62",
+    "original_url": "https://i.ibb.co/s6mjKYH/euro1.png"
+  },
+  "EUROSPORT 2 A62": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/92c9f3810fd9a7d48e80dfe5.png",
+    "channel": "EuroSport 2 HD a62 ...8e0",
+    "original_url": "https://i.ibb.co/QFndVFJ/euro2.png"
+  },
+  "BEIN SPORTS 1 B64": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4e5d27abff2a3c992827874e.png",
+    "channel": "Bein Sports 1 b64 ...a52",
+    "original_url": "https://i.ibb.co/3fPVPLL/Bein1.png"
+  },
+  "BEIN SPORTS 2 A52": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/042dfc159b575834edbca235.png",
+    "channel": "Bein Sports 2 a52 ...a05",
+    "original_url": "https://i.ibb.co/9VMNBsJ/Bein2.png"
+  },
+  "BEIN SPORTS 3 A05": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/4de7933a66f84f5bf7526095.png",
+    "channel": "Bein Sports 3 a05 ...d62",
+    "original_url": "https://i.ibb.co/GkX99sd/Bein3.png"
+  },
+  "BEIN SPORTS 4 D62": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/d8fad510c65312c149f4837c.png",
+    "channel": "Bein Sports 4 d62 ...f9d",
+    "original_url": "https://i.ibb.co/swxDvMT/Bein4.png"
+  },
+  "BEIN SPORTS HABER F9D": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/30a4374ce47ecff73c766061.png",
+    "channel": "Bein Sports HABER f9d ...5f3",
+    "original_url": "https://i.ibb.co/cvTFJQt/Bein-Haber.png"
+  },
+  "SETANTA SPORTS 1 FF5": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/dd6d66e907563efa1b6393d9.png",
+    "channel": "Setanta Sports 1 ff5 ...707",
+    "original_url": "https://i.ibb.co/f2vxWxj/Setanta1.png"
+  },
+  "SETANTA SPORTS 2 707": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/075a7848d0d77a96ff97041b.png",
+    "channel": "Setanta Sports 2 707 ...80c",
+    "original_url": "https://i.ibb.co/P4sWVG3/Setanta2.png"
+  },
+  "ESPN 1 80C": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/b5b5d9340783d2876607ec6c.png",
+    "channel": "ESPN 1 80c ...442",
+    "original_url": "https://i.ibb.co/ssj7ZBV/espn.png"
+  },
+  "ESPN 2 442": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f9fa4a95d642c1c87e8ed2aa.png",
+    "channel": "ESPN 2 442 ...394",
+    "original_url": "https://i.ibb.co/pdpg7bR/espn2.png"
+  },
+  "FOX SPORTS 1 394": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/cce00a60641aad8ba3ab3f9b.png",
+    "channel": "Fox Sports 1 394 ...898",
+    "original_url": "https://i.ibb.co/fvG2stM/foxsports.png"
+  },
+  "FOX SPORTS 2 898": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/9e3fca4be7b125adb72782b7.png",
+    "channel": "Fox Sports 2 898 ...3b7",
+    "original_url": "https://i.ibb.co/0cnVCwv/foxsports2.png"
+  },
+  "HYPERMOTION 2": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/d423803fbe89624958162cae.png",
+    "channel": "HYPERMOTION 2 --> ELCANO",
+    "original_url": "https://i.ibb.co/8K0VrQV/hypermotion2.png"
+  },
+  "HYPERMOTION 3": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/8c7ae16a6a310f70bd1379cb.png",
+    "channel": "HYPERMOTION 3 --> ELCANO",
+    "original_url": "https://i.ibb.co/826y2Yv/Hypermotion3.png"
+  },
+  "HYPERMOTION 4": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/f2f29662d724f5aafedbaa17.png",
+    "channel": "HYPERMOTION 4 --> ELCANO",
+    "original_url": "https://i.ibb.co/KqGDjxS/hypermotion4.png"
+  },
+  "UFC FIGHT PASS": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/3be12733e59f45ec448ecf64.png",
+    "channel": "UFC Fight Pass --> ELCANO",
+    "original_url": "https://ufc-video.s3.amazonaws.com/image/Articles/big-fight-pass-logo.png"
+  },
+  "DAZN BALONCESTO 2 FHDP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/65c9bb590fd6ea4fc0f41631.png",
+    "channel": "DAZN Baloncesto 2 FHDp ** --> ELCANO",
+    "original_url": "https://www.adslzone.net/app/uploads-adslzone.net/2025/12/dazn-baloncesto-movistar-plus.png"
+  },
+  "DAZN BALONCESTO FHDP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/65c9bb590fd6ea4fc0f41631.png",
+    "channel": "DAZN Baloncesto FHDp ** --> ELCANO",
+    "original_url": "https://www.adslzone.net/app/uploads-adslzone.net/2025/12/dazn-baloncesto-movistar-plus.png"
+  },
+  "DAZN BALONCESTO SDP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/65c9bb590fd6ea4fc0f41631.png",
+    "channel": "DAZN Baloncesto SDp ** --> ELCANO",
+    "original_url": "https://www.adslzone.net/app/uploads-adslzone.net/2025/12/dazn-baloncesto-movistar-plus.png"
+  },
+  "MOVISTAR GOLF 2 FHDP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/ac85ff70393b2be8a1e41aca.png",
+    "channel": "M+ Golf 2 FHDp ** --> ELCANO",
+    "original_url": "https://r2.thesportsdb.com/images/media/channel/logo/irjqp71744196637.png"
+  },
+  "MOVISTAR GOLF FHDP": {
+    "source": "playlist_metadata",
+    "url": "https://ignacioamigo.github.io/tv-playlist-automation/logos/5fed2f026e73b92b51e8a7d7.png",
+    "channel": "M+ Golf FHDp * --> ELCANO",
+    "original_url": "https://www.vhv.rs/dpng/d/424-4244985_file-movistar-golf-svg-logo-movistar-golf-hd.png"
   }
 }

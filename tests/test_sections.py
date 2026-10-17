@@ -7,6 +7,13 @@ from playlist import parse
 
 
 class SectionsTests(unittest.TestCase):
+    def test_direct_catalogue_is_first_without_dropping_archive_links(self):
+        current = dict(self.entry('DAZN Z', 'a'), catalog_priority=0)
+        archive = dict(self.entry('DAZN A', 'b'), catalog_priority=1)
+        text, counts = render_sections([archive, current])
+        rows = parse(text)
+        self.assertEqual([row.name for row in rows], ['DAZN Z', 'DAZN A'])
+        self.assertEqual({row.url for row in rows}, {current['url'], archive['url']})
     def entry(self, name, digit):
         return {'name': name, 'url': 'acestream://' + digit * 40, 'source': 'Test'}
 

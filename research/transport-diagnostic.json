@@ -1,0 +1,22 @@
+{
+  "engine_version": {
+    "platform": "android",
+    "version": "3.2.17",
+    "code": 3021700
+  },
+  "sample_size": 10,
+  "transport_resolved": 0,
+  "errors": {
+    "TimeoutError": 7,
+    "cannot get transport file": 3
+  },
+  "engine_reports_connected": false,
+  "conclusion": "inconclusive: test engine reported no Internet connection; no channel marked dead",
+  "scope": "metadata only, no playback; local Docker environment, not the TV",
+  "image_digest": "sha256:506c4215115d8b0ac1e24f4c67c954f0dbf86e4b4ea508582e497d8c920e9933",
+  "catalogue_observation": {
+    "new_era_snapshot_references_missing_from_current_source_but_present_in_mirrors": 20,
+    "direct_profile_entries": 355,
+    "complete_catalogue_entries": 2345
+  }
+}

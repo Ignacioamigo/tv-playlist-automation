@@ -98,3 +98,23 @@ Los nombres de canal no siempre bastan para identificar una marca. Cuando no hay
 El workflow revisa los logos en cada actualización y conserva los archivos anteriores mediante caché para que una lista aún cacheada en la TV no pierda sus imágenes. Las fuentes y URLs originales de cada imagen se registran en `config/logo-index.json`. Si OTT Navigator muestra imágenes antiguas después de actualizar el proveedor, comprobar si su versión ofrece recarga o limpieza específica de la caché de logos; los textos exactos del menú dependen de la versión.
 
 Fuentes del catálogo: [picons_dobleM](https://github.com/davidmuma/picons_dobleM) y [API iptv-org](https://github.com/iptv-org/api).
+
+## Reducir errores y comparar fuentes
+
+La lista completa conserva todos los enlaces recopilados, pero las referencias de NEW ERA y ELCANO aparecen primero dentro de cada sección. El criterio es la procedencia del catálogo, no una prueba de reproducción. Así se evita situar por delante copias históricas por una simple ordenación alfabética.
+
+También se publica una lista separada en <https://ignacioamigo.github.io/tv-playlist-automation/directos.m3u>, limitada a esas dos fuentes y actualizada por el mismo workflow. No elimina ni sustituye el catálogo completo. Todas sus entradas requieren Ace Stream: «directos» se refiere a las fuentes de catálogo, no a un vídeo HTTP independiente del motor. Puede usar el último respaldo si una descarga falla, como la lista completa.
+
+La investigación detectó que algunas referencias retiradas de NEW ERA seguían presentes en Gists y por eso reaparecían al fusionar todo. La lista reducida excluye esas copias por procedencia; no se debe presentar como una lista de canales comprobados o garantizados.
+
+Para comprobar archivos de transporte con un motor ejecutándose en el mismo equipo:
+
+```bash
+python3 scripts/check_transport.py --engine http://127.0.0.1:6878 --playlist docs/directos.m3u --max-items 10
+```
+
+El comprobador consulta `get_version`, `get_network_connection_status` y `get_media_files`. Distingue Content ID e infohash, limita los tiempos y no inicia vídeo. Si el motor informa `connected=false`, detiene el estudio sin marcar canales como caídos. Resolver un transporte tampoco garantiza vídeo ni estabilidad.
+
+En la prueba local se utilizó un contenedor temporal Android 3.2.17. Ninguna de las diez muestras resolvió a tiempo; el motor informó `connected=false` y hubo errores de conexión/resolución dentro del entorno. El resultado es inconcluso y no describe la TV del usuario. No se ha eliminado ningún enlace por ese ensayo. El contenedor se detuvo al finalizar y el resumen está en [research/transport-diagnostic.json](research/transport-diagnostic.json).
+
+Los pasos para medir estabilidad y comparar con la televisión están en [ESTUDIO_ESTABILIDAD.md](ESTUDIO_ESTABILIDAD.md).

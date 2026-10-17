@@ -11,7 +11,8 @@
         "k2k4r8lm8tkmuxbc8lkmq1in3v0oya1p6pe9o5bu0hu30br5ko08k2gb"
       ],
       "path": "data/listas/lista_fuera_iptv.m3u",
-      "publish": true
+      "publish": true,
+      "direct": true
     },
     {
       "id": "elcano",
@@ -23,7 +24,8 @@
         "k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs"
       ],
       "path": "hashes_acestream.m3u",
-      "publish": true
+      "publish": true,
+      "direct": true
     },
     {
       "id": "ace_ui",
@@ -34,7 +36,8 @@
       "allowed_hosts": [
         "acestreamui.app"
       ],
-      "publish": true
+      "publish": true,
+      "direct": false
     },
     {
       "id": "overtakefans",
@@ -45,7 +48,8 @@
       "allowed_hosts": [
         "overtakefans.com"
       ],
-      "publish": true
+      "publish": true,
+      "direct": false
     },
     {
       "id": "gist_jahoyos",
@@ -57,7 +61,8 @@
         "api.github.com",
         "gist.githubusercontent.com"
       ],
-      "publish": true
+      "publish": true,
+      "direct": false
     },
     {
       "id": "gist_tristansp",
@@ -69,7 +74,8 @@
         "api.github.com",
         "gist.githubusercontent.com"
       ],
-      "publish": true
+      "publish": true,
+      "direct": false
     },
     {
       "id": "gist_redrusiam",
@@ -81,7 +87,8 @@
         "api.github.com",
         "gist.githubusercontent.com"
       ],
-      "publish": true
+      "publish": true,
+      "direct": false
     }
   ]
 }

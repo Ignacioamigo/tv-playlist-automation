@@ -1,10 +1,10 @@
 {
-  "attempted_at": "2026-10-17T13:56:04.522769+00:00",
+  "attempted_at": "2026-10-17T17:16:40.456155+00:00",
   "sources": [
     {
       "id": "new_era",
       "ok": true,
-      "entries": 371,
+      "entries": 354,
       "publish": true,
       "cached": false,
       "error": null
@@ -12,7 +12,7 @@
     {
       "id": "elcano",
       "ok": true,
-      "entries": 69,
+      "entries": 53,
       "publish": true,
       "cached": false,
       "error": null
@@ -68,12 +68,12 @@
     "LIGA DE CAMPEONES": 61,
     "1RFEF": 2,
     "DAZN": 133,
-    "MOVISTAR DEPORTES": 69,
+    "MOVISTAR DEPORTES": 68,
     "FORMULA 1": 8,
     "MOTOGP Y MOTOR": 18,
     "EUROSPORT": 50,
     "FUTBOL INTERNACIONAL": 40,
-    "DEPORTES INTERNACIONALES": 258,
+    "DEPORTES INTERNACIONALES": 259,
     "CINE Y SERIES": 49,
     "INFANTIL": 9,
     "DOCUMENTALES": 12,
@@ -88,12 +88,12 @@
     "LIGA DE CAMPEONES": 61,
     "1RFEF": 2,
     "DAZN": 133,
-    "MOVISTAR DEPORTES": 69,
+    "MOVISTAR DEPORTES": 68,
     "FORMULA 1": 8,
     "MOTOGP Y MOTOR": 18,
     "EUROSPORT": 50,
     "FUTBOL INTERNACIONAL": 40,
-    "DEPORTES INTERNACIONALES": 258,
+    "DEPORTES INTERNACIONALES": 259,
     "CINE Y SERIES": 49,
     "INFANTIL": 9,
     "DOCUMENTALES": 12,
@@ -102,10 +102,11 @@
     "GENERALISTAS ESPANA": 59,
     "OTROS / SIN CLASIFICAR": 1394
   },
-  "sha256": "6d461e362e0a2e454331f494530246b9d8609b71f7f0416d18cf4ed6f4dbd264",
+  "sha256": "c0cbe1772dc0ed4c2404593a1be1c0977996aa95a3a68229a2abac43902836a3",
+  "direct_entries": 355,
   "logos": {
     "entries": 2345,
-    "channel_logo": 1170,
-    "generic_logo": 1175
+    "channel_logo": 1255,
+    "generic_logo": 1090
   }
 }

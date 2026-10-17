@@ -140,7 +140,7 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
         ids.add(source['id'])
     ipfs = ipfs_factory(ipfs_bin)
     ipfs_ready = False
-    entries, publishable, reports = [], [], []
+    entries, publishable, direct_entries, reports = [], [], [], []
     cache = root / '.research/source-cache'
     cache.mkdir(parents=True, exist_ok=True)
     try:
@@ -181,9 +181,13 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
         with ThreadPoolExecutor(max_workers=3) as pool:
             results = list(pool.map(fetch_one, sources))
         for source, items, error, cached in results:
+            for item in items:
+                item['catalog_priority'] = 0 if source.get('direct') is True else 1
             entries.extend(items)
             if source['publish']:
                 publishable.extend(items)
+                if source.get('direct') is True:
+                    direct_entries.extend(items)
             reports.append({'id': source['id'], 'ok': error is None, 'entries': len(items),
                             'publish': source['publish'], 'cached': cached, 'error': error})
             print(f"{source['id']}: {'OK' if error is None else 'BACKUP' if cached else 'ERROR'}; {len(items)} entradas")
@@ -207,6 +211,10 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
         status['publication_entries'] = len(parse(text))
         status['publication_sections'] = counts
         status['sha256'] = hashlib.sha256(text.encode()).hexdigest()
+        if direct_entries:
+            direct_text, _ = render_sections(direct_entries)
+            status['direct_entries'] = len(parse(direct_text))
+            atomic_write(root / 'docs/directos.m3u', direct_text)
         atomic_write(root / 'docs/canales.m3u', text)
         status['published'] = True
         atomic_write(root / 'docs/status.json', json.dumps(status, indent=2) + '\n')

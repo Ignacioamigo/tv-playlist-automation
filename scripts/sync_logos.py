@@ -215,6 +215,7 @@ def sync(reuse_verified=False):
         counts['unresolved_names'] = sorted(unresolved)
         return counts
     coverage = decorate(ROOT / 'docs/canales.m3u')
+    decorate(ROOT / 'docs/directos.m3u')
     decorate(ROOT / '.research/canales-candidatos.m3u')
     report = {'checked_at': datetime.now(timezone.utc).isoformat(), 'channel_name_keys': len(names),
               'matched_keys': len(index), 'image_failures': errors, 'picons_revision': revision, 'coverage': coverage}
