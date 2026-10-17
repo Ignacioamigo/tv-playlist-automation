@@ -88,3 +88,13 @@ Ahora los Content IDs explícitos siguen como `acestream://...`; los infohashes 
 No se ha comprobado físicamente este cambio en la TV del usuario. Corrige la representación de los identificadores, pero no recupera emisiones retiradas ni garantiza pares disponibles. Si falla una entrada, comparar el mismo identificador en Ace Stream directamente permite distinguir un problema del origen de uno de integración.
 
 Referencia: [parámetros Content ID e infohash en la documentación oficial de Ace Stream](https://docs.acestream.media/developers/start-playback/).
+
+## Logos de canales
+
+El generador escribe `tvg-logo` en todas las entradas y conserva los logos declarados por las M3U de origen. El actualizador de logos cruza nombres normalizados con `picons_dobleM` y el catálogo de `iptv-org`, sin mezclar Movistar LaLiga con DAZN LaLiga ni cambiar la numeración de sus variantes. Descarga las imágenes PNG y comprueba estado HTTP, firma y dimensiones antes de alojarlas en `docs/logos/`.
+
+Los nombres de canal no siempre bastan para identificar una marca. Cuando no hay coincidencia inequívoca o imagen válida, se utiliza un icono neutro de TV; no se inventa un logo. `docs/logo-status.json` detalla cuántas entradas tienen logo identificado y cuáles quedan pendientes. La comprobación automática acredita descarga y correspondencia por nombre, no una revisión visual de cada marca ni del renderizado de la TV.
+
+El workflow revisa los logos en cada actualización y conserva los archivos anteriores mediante caché para que una lista aún cacheada en la TV no pierda sus imágenes. Las fuentes y URLs originales de cada imagen se registran en `config/logo-index.json`. Si OTT Navigator muestra imágenes antiguas después de actualizar el proveedor, comprobar si su versión ofrece recarga o limpieza específica de la caché de logos; los textos exactos del menú dependen de la versión.
+
+Fuentes del catálogo: [picons_dobleM](https://github.com/davidmuma/picons_dobleM) y [API iptv-org](https://github.com/iptv-org/api).

@@ -102,5 +102,10 @@
     "GENERALISTAS ESPANA": 59,
     "OTROS / SIN CLASIFICAR": 1394
   },
-  "sha256": "a9455c39c5db2b2089e9221bdd5a9372c919274bdc651ab9a726642c5b6ef944"
+  "sha256": "6d461e362e0a2e454331f494530246b9d8609b71f7f0416d18cf4ed6f4dbd264",
+  "logos": {
+    "entries": 2345,
+    "channel_logo": 1170,
+    "generic_logo": 1175
+  }
 }

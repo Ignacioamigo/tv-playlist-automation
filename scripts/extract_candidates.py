@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, urlsplit
 from inspect_sources import fetch
-from playlist import ENGINE_INFOHASH
+from playlist import ENGINE_INFOHASH, https_url
 from sections import render_sections
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,10 +40,17 @@ def extract(text: str, source: str) -> list[dict]:
             'name': name, 'url': 'http://127.0.0.1:6878/ace/getstream?infohash=' + sid.lower(),
             'source': source, 'identifier_type': 'infohash'}
     pending = None
+    pending_logo = None
     for line in text.splitlines():
         if line.startswith('#EXTINF:'):
             quoted = False
             pending = None
+            pending_logo = None
+            if logo_match := re.search(r'tvg-logo="([^"]+)"', line):
+                try:
+                    pending_logo = https_url(logo_match[1])
+                except ValueError:
+                    pass
             for index, char in enumerate(line):
                 if char == '"': quoted = not quoted
                 elif char == ',' and not quoted:
@@ -54,10 +61,16 @@ def extract(text: str, source: str) -> list[dict]:
             found.setdefault('infohash:' + sid, {'name': pending or f'{source} · {sid[:8]}',
                 'url': 'http://127.0.0.1:6878/ace/getstream?infohash=' + sid,
                 'source': source, 'identifier_type': 'infohash'})
+            if pending_logo:
+                found['infohash:' + sid]['logo'] = pending_logo
             pending = None
+            pending_logo = None
         elif sid := entry_id(line.strip()):
             found.setdefault(sid, {'name': pending or f'{source} · {sid[:8]}', 'url': 'acestream://' + sid, 'source': source})
+            if pending_logo:
+                found[sid]['logo'] = pending_logo
             pending = None
+            pending_logo = None
     # Also retain IDs embedded in JSON, HTML and escaped links.
     for sid in ACE.findall(text.replace('\\/', '/')):
         sid = sid.lower()

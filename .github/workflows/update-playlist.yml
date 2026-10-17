@@ -55,6 +55,18 @@ jobs:
       - name: Refresh current catalogues and publish enabled sources
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: python scripts/refresh_sources.py
+      - name: Restore previously published logo assets
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/cache@v4
+        with:
+          path: |
+            docs/logos
+            config/logo-index.json
+          key: tv-logos-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: tv-logos-
+      - name: Verify channel logos and add playlist metadata
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: python scripts/sync_logos.py
       - name: Upload refresh report (metadata only)
         if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4

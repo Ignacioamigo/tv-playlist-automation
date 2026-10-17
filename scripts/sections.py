@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import unicodedata
+from logos import load_index, select_logo
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / 'config/sections.json'
 
@@ -24,6 +25,7 @@ def render_sections(entries: list[dict], config: Path = DEFAULT_CONFIG) -> tuple
     for entry in entries:
         aliases.setdefault(entry['url'], []).append(entry)
     grouped = {}
+    logo_index = load_index()
     for url, variants in aliases.items():
         # Keep a descriptive channel name ahead of extraction fallback labels.
         variants = sorted(variants, key=lambda e: (' · ' in e['name'], len(e['name']), natural_key(e['name']), e['source']))
@@ -33,7 +35,8 @@ def render_sections(entries: list[dict], config: Path = DEFAULT_CONFIG) -> tuple
             if matches:
                 selected, group = matches[0], section
                 break
-        grouped.setdefault(group, []).append(dict(selected, url=url))
+        logo, logo_status = select_logo([selected] + variants, logo_index)
+        grouped.setdefault(group, []).append(dict(selected, url=url, logo=logo))
     lines = ['#EXTM3U refresh="3"']
     counts = Counter()
     for group in cfg['order']:
@@ -43,7 +46,7 @@ def render_sections(entries: list[dict], config: Path = DEFAULT_CONFIG) -> tuple
         lines.extend(['', f'# ===== {group} ====='])
         for entry in sorted(items, key=lambda e: (natural_key(e['name']), e['url'])):
             name = ' '.join(entry['name'].split())
-            lines.extend([f'#EXTINF:-1 group-title="{group}",{name}', entry['url']])
+            lines.extend([f'#EXTINF:-1 tvg-logo="{entry["logo"]}" group-title="{group}",{name}', entry['url']])
         counts[group] = len(items)
     if grouped:
         raise ValueError('section missing from configured order')
