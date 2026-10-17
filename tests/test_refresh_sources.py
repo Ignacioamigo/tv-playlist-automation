@@ -83,6 +83,22 @@ class RefreshTests(unittest.TestCase):
         with self.assertRaises(ValueError): self.run_refresh(collector)
         self.assertEqual((self.root / 'docs/canales.m3u').read_bytes(), original)
 
+    def test_legacy_ui_backup_migrates_to_infohash_endpoint(self):
+        self.sources[0]['publish'] = True
+        self.sources.append(dict(self.sources[0], id='ui', type='web_catalog'))
+        backups = self.root / 'data/source-snapshots'
+        backups.mkdir(parents=True)
+        (backups / 'ui.json').write_text(json.dumps([
+            {'name': 'Legacy UI', 'url': 'acestream://' + 'b' * 40, 'source': 'UI'}]))
+        def collector(source, *args):
+            if source['id'] == 'ui': raise ValueError('HTTP 403')
+            return self.items(source)
+        status = self.run_refresh(collector)
+        text = (self.root / 'docs/canales.m3u').read_text()
+        self.assertEqual(status['publication_entries'], 2)
+        self.assertIn('http://127.0.0.1:6878/ace/getstream?infohash=' + 'b' * 40, text)
+        self.assertNotIn('acestream://' + 'b' * 40, text)
+
     def test_dynamic_bundle_discovery(self):
         source = {'name': 'UI', 'type': 'web_catalog', 'url': 'https://source.example/', 'allowed_hosts': ['source.example']}
         calls = []

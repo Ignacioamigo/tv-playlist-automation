@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, urlsplit
 from inspect_sources import fetch
+from playlist import ENGINE_INFOHASH
 from sections import render_sections
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,7 +36,9 @@ def extract(text: str, source: str) -> list[dict]:
             name = json.loads(encoded_name)
         except ValueError:
             continue
-        found[sid.lower()] = {'name': name, 'url': 'acestream://' + sid.lower(), 'source': source}
+        found['infohash:' + sid.lower()] = {
+            'name': name, 'url': 'http://127.0.0.1:6878/ace/getstream?infohash=' + sid.lower(),
+            'source': source, 'identifier_type': 'infohash'}
     pending = None
     for line in text.splitlines():
         if line.startswith('#EXTINF:'):
@@ -46,6 +49,12 @@ def extract(text: str, source: str) -> list[dict]:
                 elif char == ',' and not quoted:
                     pending = line[index + 1:].strip()
                     break
+        elif match := ENGINE_INFOHASH.fullmatch(line.strip()):
+            sid = match[1].lower()
+            found.setdefault('infohash:' + sid, {'name': pending or f'{source} · {sid[:8]}',
+                'url': 'http://127.0.0.1:6878/ace/getstream?infohash=' + sid,
+                'source': source, 'identifier_type': 'infohash'})
+            pending = None
         elif sid := entry_id(line.strip()):
             found.setdefault(sid, {'name': pending or f'{source} · {sid[:8]}', 'url': 'acestream://' + sid, 'source': source})
             pending = None

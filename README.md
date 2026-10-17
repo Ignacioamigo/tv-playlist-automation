@@ -6,14 +6,14 @@ Lista M3U organizada por secciones, recopilada de siete catálogos públicos. Py
 
 **URL directa:** <https://ignacioamigo.github.io/tv-playlist-automation/canales.m3u>
 
-La publicación de los catálogos recopilados está activada por petición expresa del usuario. La lista inicial contiene **2.312 identificadores únicos**, sin las dos entradas ficticias del ejemplo. El número puede cambiar al actualizar las fuentes. Validar la estructura no garantiza que una emisión esté activa, que tenga pares ni que todos los identificadores correspondan a canales diferentes.
+La publicación de los catálogos recopilados está activada por petición expresa del usuario. La lista corregida separa Content IDs e infohashes; su recuento se puede consultar en `status.json`. La lista inicial contenía **2.312 cadenas hexadecimales únicas**, sin las dos entradas ficticias del ejemplo. El número puede cambiar al actualizar las fuentes. Validar la estructura no garantiza que una emisión esté activa, que tenga pares ni que todos los identificadores correspondan a canales diferentes.
 
 ## Configurar la TV
 
 1. Abrir OTT Navigator → Ajustes → Proveedor → añadir una playlist M3U por URL. Los textos pueden variar por versión.
 2. Introducir `https://da.gd/Q6oqM` y guardar. Si ya estaba añadido, pulsar **Actualizar** una vez.
 3. Comprobar los grupos: LA LIGA, HYPERMOTION, LIGA DE CAMPEONES, DAZN, MOVISTAR DEPORTES y el resto.
-4. Para reproducir entradas `acestream://`, el motor Ace Stream debe estar instalado y funcionar en la TV. Probar primero una emisión directamente en el motor y después desde OTT Navigator.
+4. Para reproducir entradas `acestream://`, el motor Ace Stream debe estar instalado y funcionar en la TV. Abrir Ace Stream Engine antes de volver a OTT Navigator y mantenerlo ejecutándose en la TV: las entradas por infohash utilizan su endpoint HTTP local. Probar primero una emisión directamente en el motor y después desde OTT Navigator.
 
 La cabecera `#EXTM3U refresh="3"` pide recarga cada tres horas. La FAQ de OTT Navigator lo documenta desde v1.6.6.1; hay que verificar el comportamiento en la versión y TV concretas, especialmente después de suspender el dispositivo.
 
@@ -25,7 +25,7 @@ El workflow [Update authorized TV playlist](https://github.com/Ignacioamigo/tv-p
 2. Descarga Kubo 0.43.1 de su release oficial y comprueba el SHA-512.
 3. Restaura las últimas copias válidas de las fuentes.
 4. Resuelve los nombres IPNS actuales de NEW ERA y ELCANO. Descubre el bundle vigente de Ace Stream UI, consulta Overtakefans y descarga la revisión actual de tres Gists.
-5. Normaliza las representaciones de los IDs, elimina duplicados y organiza por secciones.
+5. Conserva la diferencia entre Content IDs e infohashes, elimina duplicados del mismo tipo y organiza por secciones.
 6. Valida y publica `docs/canales.m3u` mediante GitHub Pages, conservando la misma URL.
 
 GitHub puede retrasar ejecuciones y desactiva la programación de repositorios públicos tras 60 días sin actividad. Revisar Actions periódicamente.
@@ -78,3 +78,13 @@ El enlace corto es una redirección externa: si falla, usar la URL directa. El a
 - [FAQ oficial de OTT Navigator](https://ottnav.github.io/faq.html).
 - [GitHub: programación y zonas horarias](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
 - [GitHub: despliegues de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Corrección de «cannot get transport file»
+
+Se detectó y corrigió una conversión incorrecta del catálogo estático de Ace Stream UI: su campo `infohash` se había tratado como Content ID. La propia aplicación solicita `get_content_id` al motor antes de abrir un enlace `acestream://`. No se puede sustituir esa conversión copiando el mismo hexadecimal.
+
+Ahora los Content IDs explícitos siguen como `acestream://...`; los infohashes utilizan el endpoint documentado `http://127.0.0.1:6878/ace/getstream?infohash=...`. Esa dirección se abre en la TV y requiere que Ace Stream Engine esté ejecutándose allí con el puerto HTTP predeterminado. No se intenta acceder al localhost del runner de GitHub. Las copias antiguas de Ace Stream UI se migran al leerlas para evitar reintroducir el error desde la caché.
+
+No se ha comprobado físicamente este cambio en la TV del usuario. Corrige la representación de los identificadores, pero no recupera emisiones retiradas ni garantiza pares disponibles. Si falla una entrada, comparar el mismo identificador en Ace Stream directamente permite distinguir un problema del origen de uno de integración.
+
+Referencia: [parámetros Content ID e infohash en la documentación oficial de Ace Stream](https://docs.acestream.media/developers/start-playback/).

@@ -8,6 +8,7 @@ import unicodedata
 from urllib.parse import unquote, urlsplit
 
 ACE = re.compile(r'acestream://([0-9a-fA-F]{40})')
+ENGINE_INFOHASH = re.compile(r'http://127\.0\.0\.1:6878/ace/getstream\?infohash=([0-9a-fA-F]{40})')
 ATTRIBUTE = re.compile(r'\s+([a-z][a-z0-9-]*)="([^"\r\n]*)"')
 ALLOWED_ATTRIBUTES = {'tvg-id', 'tvg-name', 'tvg-logo', 'group-title'}
 
@@ -49,6 +50,9 @@ def https_url(value: str, hosts: set[str] | None = None) -> str:
 def stream_url(value: str, hosts: set[str] | None = None) -> str:
     if match := ACE.fullmatch(value):
         return 'acestream://' + match[1].lower()
+    if match := ENGINE_INFOHASH.fullmatch(value):
+        # Playback happens on the TV; never fetch this control endpoint in CI.
+        return 'http://127.0.0.1:6878/ace/getstream?infohash=' + match[1].lower()
     return https_url(value, hosts)
 
 

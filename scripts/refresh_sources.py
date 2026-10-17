@@ -167,6 +167,12 @@ def refresh(root: Path, config: Path, ipfs_bin='ipfs', collector=collect, ipfs_f
                         items = json.loads(backup.read_text())
                         if not items:
                             continue
+                        # Migrate catalogues cached before infohash/content-ID separation.
+                        if source['type'] == 'web_catalog':
+                            for item in items:
+                                if item['url'].startswith('acestream://'):
+                                    item['url'] = 'http://127.0.0.1:6878/ace/getstream?infohash=' + item['url'][12:]
+                                    item['identifier_type'] = 'infohash'
                         parse(render_sections(items)[0])
                         return source, items, reason, True
                     except (OSError, ValueError, TypeError, KeyError):

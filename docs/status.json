@@ -1,5 +1,5 @@
 {
-  "attempted_at": "2026-10-17T13:49:12.237655+00:00",
+  "attempted_at": "2026-10-17T13:56:04.522769+00:00",
   "sources": [
     {
       "id": "new_era",
@@ -60,47 +60,47 @@
   ],
   "complete": true,
   "published": true,
-  "candidate_entries": 2312,
-  "publication_entries": 2312,
+  "candidate_entries": 2345,
+  "publication_entries": 2345,
   "sections": {
     "LA LIGA": 83,
     "HYPERMOTION": 14,
     "LIGA DE CAMPEONES": 61,
     "1RFEF": 2,
-    "DAZN": 129,
+    "DAZN": 133,
     "MOVISTAR DEPORTES": 69,
     "FORMULA 1": 8,
-    "MOTOGP Y MOTOR": 16,
+    "MOTOGP Y MOTOR": 18,
     "EUROSPORT": 50,
-    "FUTBOL INTERNACIONAL": 35,
-    "DEPORTES INTERNACIONALES": 237,
+    "FUTBOL INTERNACIONAL": 40,
+    "DEPORTES INTERNACIONALES": 258,
     "CINE Y SERIES": 49,
     "INFANTIL": 9,
     "DOCUMENTALES": 12,
     "MUSICA": 37,
     "NOTICIAS": 49,
     "GENERALISTAS ESPANA": 59,
-    "OTROS / SIN CLASIFICAR": 1393
+    "OTROS / SIN CLASIFICAR": 1394
   },
   "publication_sections": {
     "LA LIGA": 83,
     "HYPERMOTION": 14,
     "LIGA DE CAMPEONES": 61,
     "1RFEF": 2,
-    "DAZN": 129,
+    "DAZN": 133,
     "MOVISTAR DEPORTES": 69,
     "FORMULA 1": 8,
-    "MOTOGP Y MOTOR": 16,
+    "MOTOGP Y MOTOR": 18,
     "EUROSPORT": 50,
-    "FUTBOL INTERNACIONAL": 35,
-    "DEPORTES INTERNACIONALES": 237,
+    "FUTBOL INTERNACIONAL": 40,
+    "DEPORTES INTERNACIONALES": 258,
     "CINE Y SERIES": 49,
     "INFANTIL": 9,
     "DOCUMENTALES": 12,
     "MUSICA": 37,
     "NOTICIAS": 49,
     "GENERALISTAS ESPANA": 59,
-    "OTROS / SIN CLASIFICAR": 1393
+    "OTROS / SIN CLASIFICAR": 1394
   },
-  "sha256": "9a4c83e853639c4a4cabfe7ba3974714787ff1d22eadc076dcf2f3dd097fe0e2"
+  "sha256": "a9455c39c5db2b2089e9221bdd5a9372c919274bdc651ab9a726642c5b6ef944"
 }
