@@ -2,7 +2,9 @@
 
 Genera una lista M3U pública y estable desde archivos locales propios o autorizados. Python 3.12 o posterior, sin paquetes externos ni servidores permanentes.
 
-**Estado:** MVP local implementado y probado. Los dos canales de ejemplo son ficticios: permiten comprobar la importación, pero no reproducen vídeo. La publicación en GitHub y las pruebas físicas en la TV están pendientes.
+**Estado:** proyecto publicado en [GitHub](https://github.com/Ignacioamigo/tv-playlist-automation), con Pages activo y URL M3U comprobada (HTTP 200 y dos entradas válidas). Los dos canales de ejemplo son ficticios: permiten comprobar la importación, pero no reproducen vídeo. Las emisiones autorizadas reales y las pruebas físicas en la TV están pendientes.
+
+**URL para OTT Navigator:** <https://ignacioamigo.github.io/tv-playlist-automation/canales.m3u>
 
 ## Empezar
 
@@ -103,7 +105,8 @@ Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no
 
 - Implementados: configuración local, parser, validación CLI, generación determinista, deduplicación, control de orígenes, conservación ante fallos, informe, pruebas sintéticas y workflow.
 - Comprobado localmente: 13 pruebas automáticas, generación de dos entradas ficticias y validación del resultado.
-- Pendientes: crear/subir repositorio remoto, habilitar Pages, verificar workflow manual/programado y URL pública, aportar emisiones autorizadas reales y probar recarga/reproducción en la TV.
+- Comprobado en GitHub: repositorio público creado, Pages activo, workflows por push y ejecución manual correctos y URL pública válida.
+- Pendientes: observar la primera ejecución programada, aportar emisiones autorizadas reales y probar recarga/reproducción en la TV. La ejecución manual validada está en [Actions](https://github.com/Ignacioamigo/tv-playlist-automation/actions/runs/39035177657).
 
 ## Referencias verificadas
 
