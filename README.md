@@ -115,3 +115,5 @@ Anotar las pruebas en [REGISTRO_TV.md](REGISTRO_TV.md). Una lista actualizada no
 - [GitHub: despliegues personalizados de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 No se ha conectado ni extraído contenido de los directorios de terceros inventariados en el documento original.
+
+La inspección de todos los enlaces inventariados está documentada en [REVISION_FUENTES.md](REVISION_FUENTES.md), con resultados y limitaciones por fuente.
